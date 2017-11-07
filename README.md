@@ -1,5 +1,3 @@
-# gulp-web_starter
-
 ## Setup
 
 ### Create a directory
