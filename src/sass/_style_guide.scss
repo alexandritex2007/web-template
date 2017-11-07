@@ -1,0 +1,394 @@
+﻿//   ------------------------------------------- センター配置 -------------------------------------------------------------
+/*
+#styleguide
+
+センター配置
+```
+<p class="align_center">サンプルテキスト</p>
+
+<div class="align_center">
+	<img src="https://placeholdit.imgix.net/~text?txtsize=92&txt=350%C3%97200&w=350&h=200" alt="">
+</div>
+
+```
+*/
+
+//   ------------------------------------------- 左配置 -------------------------------------------------------------
+/*
+#styleguide
+
+左配置
+```
+<div class="align_left">
+	<img src="https://placeholdit.imgix.net/~text?txtsize=92&txt=350%C3%97200&w=350&h=200" alt="">
+</div>
+
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+
+```
+*/
+
+//   ------------------------------------------- 右配置 -------------------------------------------------------------
+/*
+#styleguide
+
+右配置
+```
+<div class="align_right">
+	<img src="https://placeholdit.imgix.net/~text?txtsize=92&txt=350%C3%97200&w=350&h=200" alt="">
+</div>
+
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+
+```
+*/
+
+//   ------------------------------------------- キャプション -------------------------------------------------------------
+/*
+#styleguide
+
+キャプション
+```
+<div class="caption">
+	<img src="https://placeholdit.imgix.net/~text?txtsize=92&txt=350%C3%97200&w=350&h=200">
+	<span>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</span>
+</div>
+
+```
+*/
+
+
+
+
+//   ------------------------------------------- テキスト -------------------------------------------------------------
+
+/*
+#styleguide
+
+テキスト
+```
+<h1 class="heading01">見出し１</h1>
+<h2 class="heading02">見出し２</h2>
+<h3 class="heading03">見出し３</h3>
+<h4 class="heading04">見出し４</h4>
+<h5 class="heading05">見出し５</h5>
+<p>サンプルテキスト</p>
+<p><a href="" class="link">サンプルテキスト</a></p>
+<p><a href="" class="pdf">サンプルテキスト（PDF）</a></p>
+
+
+```
+*/
+
+//   ------------------------------------------- btn -------------------------------------------------------------
+
+/*
+#styleguide
+
+ボタン種類
+```
+<button><a href="#" class="btn btn_standard">ボタン（標準）</a></button>
+<button><a href="#" class="btn btn_error">ボタン（エラー）</a></button>
+<button><a href="#" class="btn btn_warning">ボタン（注意）</a></button>
+```
+*/
+
+/*
+#styleguide
+
+ボタンサイズ
+```
+<button><a href="#" class="btn btn_standard btn_small">ボタン（小）</a></button>
+<button><a href="#" class="btn btn_standard">ボタン（標準）</a></button>
+<br>
+<br>
+<a href="#" class="btn btn_standard btn_big">ボタン（大）</a>
+```
+*/
+
+/*
+#styleguide
+
+ボタン角丸
+```
+<a href="#" class="btn btn_standard btn_radius">ボタン</a>
+```
+*/
+
+//   ------------------------------------------- リスト -------------------------------------------------------------
+
+/*
+#styleguide
+
+リスト黒丸
+```
+<ul class="list_disc">
+	<li>リスト１</li>
+	<li>リスト２</li>
+	<li>リスト３</li>
+</ul>
+```
+*/
+
+/*
+#styleguide
+
+リスト白丸
+```
+<ul class="list_circle">
+	<li>リスト１</li>
+	<li>リスト２</li>
+	<li>リスト３</li>
+</ul>
+```
+*/
+
+/*
+#styleguide
+
+リストナンバー
+```
+<ul class="list_number">
+	<li>リスト１</li>
+	<li>リスト２</li>
+	<li>リスト３</li>
+</ul>
+```
+*/
+
+//   ------------------------------------------- テーブル -------------------------------------------------------------
+
+/*
+#styleguide
+
+テーブル（ボーダーなし）
+```
+<table class="table">
+	<thead>
+		<tr>
+			<th>table</th>
+			<th>table</th>
+			<th>table</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+	</tbody>
+</table>
+
+
+```
+*/
+
+/*
+#styleguide
+
+テーブル（ボーダーあり）
+```
+<table class="table table_border">
+	<thead>
+		<tr>
+			<th>table</th>
+			<th>table</th>
+			<th>table</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+	</tbody>
+</table>
+
+
+```
+*/
+
+/*
+#styleguide
+
+テーブル（テーブルレイアウト１）
+```
+<table class="table table_layout01">
+	<thead>
+		<tr>
+			<th>table</th>
+			<th>table</th>
+			<th>table</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+	</tbody>
+</table>
+
+
+```
+*/
+
+/*
+#styleguide
+
+テーブル（テーブル位置センター）
+```
+<table class="table table_layout01 table_center">
+	<thead>
+		<tr>
+			<th>table</th>
+			<th>table</th>
+			<th>table</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+	</tbody>
+</table>
+
+
+```
+*/
+
+/*
+#styleguide
+
+テーブル（ストライプ）
+```
+<table class="table table_border table_stripe">
+	<thead>
+		<tr>
+			<th>table_stripe</th>
+			<th>table_stripe</th>
+			<th>table_stripe</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>table_stripe</th>
+			<td>table_stripe</td>
+			<td>table_stripe</td>
+		</tr>
+		<tr>
+			<th>table_stripe</th>
+			<td>table_stripe</td>
+			<td>table_stripe</td>
+		</tr>
+		<tr>
+			<th>table_stripe</th>
+			<td>table_stripe</td>
+			<td>table_stripe</td>
+		</tr>
+		<tr>
+			<th>table_stripe</th>
+			<td>table_stripe</td>
+			<td>table_stripe</td>
+		</tr>
+	</tbody>
+</table>
+
+
+```
+*/
+
+//   ------------------------------------------- メディア -------------------------------------------------------------
+
+/*
+#styleguide
+
+メディア（ノーマル画像左）
+```
+<div class="media">
+	<div class="media_left">
+		<img src="http://placehold.jp/64x64.png" alt="">
+	</div>
+	<div class="media_body">
+		<h3>サンプル見出し</h3>
+		<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+	</div>
+</div>
+
+
+```
+*/
+
+/*
+#styleguide
+
+メディア（ノーマル画像右）
+```
+<div class="media">
+	<div class="media_body">
+		<h3>サンプル見出し</h3>
+		<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+	</div>
+	<div class="media_right">
+		<img src="http://placehold.jp/64x64.png" alt="">
+	</div>
+</div>
+
+
+```
+*/

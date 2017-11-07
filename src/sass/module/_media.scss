@@ -1,0 +1,34 @@
+/*===　media　===*/
+
+.media {
+	%media_position {
+		display: table-cell;
+		vertical-align: top;
+	}
+	&_left {
+		@extend %media_position;
+		padding-right: 10px;
+	}
+	&_right {
+		@extend %media_position;
+		padding-left: 10px;
+	}
+	&_body {
+		@extend %media_position;
+	}
+}
+
+// @include query($sp) {
+// 	.media {
+// 		%media_position {
+// 		}
+// 		&_left {
+// 		}
+// 		&_right {
+// 		}
+// 		&_body {
+// 			@extend %media_position;
+// 		}
+// 	}
+// }
+

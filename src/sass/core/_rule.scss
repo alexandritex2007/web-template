@@ -1,0 +1,85 @@
+// ************************************************************
+//                      flame
+// ************************************************************
+$sp: 640;
+$tablet: 768;
+$pc: 992;
+
+// ************************************************************
+//                      URL
+// ************************************************************
+$img_path:'../../';
+// ************************************************************
+//                      font
+// ************************************************************
+//base-font-size
+$baseFontSize: 16px;
+//sp-base-font-size
+$spBaseFontSize: 14px;
+//sans-serif(normal)
+$gothic: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro', 'メイリオ',Meiryo, 'ＭＳ Ｐゴシック',sans-serif;
+//sans-serif(bold)
+$gothicB: 'ヒラギノ角ゴ Pro W6','Hiragino Kaku Gothic Pro', 'メイリオ',Meiryo, 'ＭＳ Ｐゴシック',sans-serif;
+//serif(normal)
+$mincho: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+//serif(bold)
+$minchoB: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+// font-color
+$textColor: #323232;
+// link-font-color
+$linkColor: #036EB8;
+
+// ************************************************************
+//                      color
+// ************************************************************
+
+// site-color
+$siteColor: #00afd6;
+// accent-color
+$accentColor: #dbf4f9;
+// error
+$errorColor: #e03535;
+// warning
+$warningColor: #f9a712;
+
+// ************************************************************
+//                      pass
+// ************************************************************
+
+// flame-pass
+$template_img:'/assets/images';
+//content-pass
+$content_img:'/content/images';
+
+// ************************************************************
+//                      margin・padding
+// ************************************************************
+
+// bottom_margin（PC）
+$textBottom: 30px;
+// bottom_margin（SP）
+$spTextBottom: 15px;
+// SP
+$spPadding: 0 15px !important;
+
+// ************************************************************
+//                      other
+// ************************************************************
+
+//opacity
+$opacity: 0.4;
+
+//radius
+$radius: 5px;
+
+//btn_padding
+$btn_v: 10px;
+$btn_h: 25px;
+
+
+
+
+
+
+
+

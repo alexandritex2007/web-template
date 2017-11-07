@@ -1,0 +1,134 @@
+/*=== basic ===*/
+
+*{
+	box-sizing: border-box;
+	word-break: break-word;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-size: $baseFontSize;
+	font-family: $gothic;
+	color: $textColor;
+	-webkit-font-smoothing: antialiased;
+}
+a {
+	color: $linkColor;
+	@extend %lineHeight;
+	text-decoration: none;
+}
+p {
+	margin-bottom: $textBottom;
+	@extend %lineHeight;
+}
+h1 {
+	@extend %lineHeight;
+	margin-bottom: $textBottom;
+}
+h2 {
+	@extend %lineHeight;
+}
+h3 {
+	@extend %lineHeight;
+}
+h4 {
+	@extend %lineHeight;
+}
+h5 {
+	@extend %lineHeight;
+}
+th {
+	@extend %lineHeight;
+}
+td {
+	@extend %lineHeight;
+}
+dt {
+	@extend %lineHeight;
+}
+dl {
+	@extend %lineHeight;
+}
+dl,ul,ol {
+	margin-bottom: $textBottom;
+	padding: 0;
+}
+li {
+	@extend %lineHeight;
+}
+em {
+	font-style: italic;
+}
+//clearfix
+.clearfix{
+	zoom: 1;
+	&:before,&:after{
+		content: "";
+		display: block;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+/*---　404page　---*/
+.error-404_heading {
+	font-size: 32px;
+	color: $siteColor;
+}
+
+/*---　search　---*/
+.screen-reader-text {
+	display: none;
+}
+
+@include query($sp) {
+	.pconly {
+		display: none !important;
+	}
+	body {
+		font-size: $spBaseFontSize;
+	}
+	p {
+		margin-bottom: $spTextBottom;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	table {
+		margin-bottom: $spTextBottom;
+	}
+	dl {
+		margin-bottom: $spTextBottom;
+	}
+	ul {
+		margin-bottom: $spTextBottom;
+	}
+	ol {
+		margin-bottom: $spTextBottom;
+	}
+
+	/*===　サイド余白 ===*/
+	%spPadding {
+		padding: $spPadding;
+	}
+	main > p {
+		@extend %spPadding;
+	}
+	main > ul {
+		@extend %spPadding;
+	}
+	main > dl {
+		@extend %spPadding;
+	}
+	main > h2 {
+		@extend %spPadding;
+	}
+	main > h3 {
+		@extend %spPadding;
+	}
+	main > h4 {
+		@extend %spPadding;
+	}
+}

@@ -1,0 +1,24 @@
+<% block 'title': %><%- @pageConfig.top.pageName %><% end %>
+<% block 'description': %>TOPページです<% end %>
+<% extend '_base' %>
+<div class="container">
+	<svg class="svg01">
+	  <use xlink:href="assets/svg/svg.svg#svg01">
+	</svg>
+
+
+	<img src="content/images/content_img_pc.png" alt="" width="100" class="switch">
+
+	<ul>
+	<% @cnt=0 %>
+	<% for i in @info : %>
+	<% if @cnt<3: %>
+	<li>
+	<div class="i_title"><%= i.title %></div>
+	<div class="i_body"><%= i.text %></div>
+	</li>
+	<% end %>
+	<% @cnt++ %>
+	<% end %>
+	</ul>
+</div>

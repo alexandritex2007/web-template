@@ -1,0 +1,49 @@
+/*===　heading　===*/
+.heading {
+	&01 {
+		font-size: $baseFontSize + 8;
+		margin-bottom: $textBottom - 20;
+	}
+	&02 {
+		font-size: $baseFontSize + 6;
+		margin-bottom: $textBottom - 22;
+	}
+	&03 {
+		font-size: $baseFontSize + 4;
+		margin-bottom: $textBottom - 24;
+	}
+	&04 {
+		font-size: $baseFontSize + 2;
+		margin-bottom: $textBottom - 26;
+	}
+	&05 {
+		font-size: $baseFontSize + 0;
+		margin-bottom: $textBottom - 28;
+	}
+}
+
+// @include query($sp) {
+// 	.heading {
+// 		&01 {
+// 			font-size: $baseFontSize + 8;
+// 			margin-bottom: $spTextBottom - 20;
+// 		}
+// 		&02 {
+// 			font-size: $baseFontSize + 6;
+// 			margin-bottom: $spTextBottom - 22;
+// 		}
+// 		&03 {
+// 			font-size: $baseFontSize + 4;
+// 			margin-bottom: $spTextBottom - 24;
+// 		}
+// 		&04 {
+// 			font-size: $baseFontSize + 2;
+// 			margin-bottom: $spTextBottom - 26;
+// 		}
+// 		&05 {
+// 			font-size: $baseFontSize + 0;
+// 			margin-bottom: $spTextBottom - 28;
+// 		}
+// 	}
+// }
+

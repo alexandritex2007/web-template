@@ -1,0 +1,61 @@
+/*===　btn 　===*/
+.btn {
+	display: inline-block;
+	padding: $btn_v $btn_h;
+	text-align: center;
+	font-size: $baseFontSize;
+	@extend %animation;
+	&_standard {
+		color: $siteColor;
+		border: 1px solid;
+		&:hover {
+			background-color: $siteColor;
+			color: #FFF;
+		}
+	}
+	&_error {
+		color: $errorColor;
+		border: 1px solid;
+		&:hover {
+			background-color: lighten($errorColor,0%);
+			color: #FFF;
+		}
+	}
+	&_warning {
+		color: $warningColor;
+		border: 1px solid;
+		&:hover {
+			background-color: lighten($warningColor,0%);
+			color: #FFF;
+		}
+	}
+	&_small {
+		font-size: $baseFontSize - 2;
+		padding: ($btn_v - 5) ($btn_h - 15);
+	}
+	&_big {
+		width: 100%;
+	}
+	&_radius {
+		border-radius: $radius;
+	}
+}
+
+@include query($sp) {
+	.btn {
+		padding: ($btn_v - 0) ($btn_h - 5);
+		font-size: $spBaseFontSize;
+		// &_standard {
+		// }
+		// &_error {
+		// }
+		// &_warning {
+		// }
+		&_small {
+			font-size: $baseFontSize - 2;
+			padding: ($btn_v - 10) ($btn_h - 15);
+		}
+	}
+}
+
+

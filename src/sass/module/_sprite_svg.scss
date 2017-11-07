@@ -1,0 +1,36 @@
+/*===　sprite/SVG　===*/
+
+/*---　sprite　---*/
+%dib {
+	display: inline-block;
+}
+.sprite {
+	&01 {
+		@extend %dib;
+		@include sprite($sprite-sprite01);
+	}
+}
+/*---　SVG　---*/
+.svg {
+	&01 {
+		width: 100px;
+		fill: #2aa3f1;
+	}
+}
+
+
+@include query($sp) {
+	/*---　sprite　---*/
+	.sprite {
+		&01 {
+			@include sprite($sprite-sprite_sp01);
+		}
+	}
+	/*---　SVG　---*/
+	.svg {
+		&01 {
+			width: 100px;
+		}
+	}
+}
+

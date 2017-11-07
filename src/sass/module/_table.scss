@@ -1,0 +1,52 @@
+/*===　table　===*/
+
+.table {
+	th {
+		font-weight: bold;
+		text-align: center;
+	}
+	th,
+	td {
+		padding: 8px 10px;
+	}
+	&_layout01 {
+		th {
+			background-color: $accentColor;
+			color: $siteColor;
+		}
+	}
+	&_border {
+		th,
+		td {
+			border: solid 1px #ccc;
+		}
+	}
+	&_center {
+		margin: 0 auto $textBottom auto;
+		th {
+			text-align: center;
+		}
+		th,
+		td {
+			padding: 8px 10px;
+		}
+	}
+	&_stripe {
+		tbody tr:nth-of-type(even) {
+			background-color: #f9f9f9;
+		}
+	}
+}
+
+@include query($sp) {
+	.table {
+		th,
+		td {
+			padding: 8px 10px;
+		}
+		&_center {
+			margin: 0 auto $spTextBottom auto;
+		}
+	}
+}
+

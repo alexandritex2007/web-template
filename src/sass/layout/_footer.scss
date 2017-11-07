@@ -1,0 +1,43 @@
+/*=== l-footer ===*/
+// .l-footer {
+	// &_inner {
+
+	// }
+// }
+/*---　gotop　---*/
+$gotopWidth: 45px;
+$gotopHeight: 45px;
+.gotop {
+	display: block;
+	width: $gotopWidth;
+	height: $gotopHeight;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+	span {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 8px 14px 8px;
+		border-color: transparent transparent #fff transparent;
+	}
+	a {
+		display: block;
+		width: $gotopWidth;
+		height: $gotopHeight;
+		line-height: 1;
+		background-color: $siteColor;
+	}
+}
+
+// @include query($sp) {
+// .l-footer {
+	// &_inner {
+
+	// }
+// }
+// 	/*---　gotop　---*/
+// }
+
