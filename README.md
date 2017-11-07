@@ -1,4 +1,4 @@
-# gulp-modx_starter
+# gulp-web_starter
 
 ## Setup
 
@@ -12,11 +12,11 @@ $ cd hoge
 ```
 ### Clone folders
 ```
-$ git clone https://github.com/alexandritex2007/gulp-modx_starter.git
+$ git clone https://github.com/alexandritex2007/web-template.git
 ```
 ### Move to directory
 ```
-$ cd gulp-modx_starter
+$ cd web-template
 ```
 ### Installing packages
 ```
@@ -31,16 +31,40 @@ $ gulp
 
 ```
 .
+├── LICENSE
 ├── README.md
+├── assets
+│   └── js
+│       └── min
 ├── dist
+│   ├── _base.html
+│   ├── apple-touch-icon.png
 │   ├── assets
 │   │   ├── images
+│   │   │   ├── assets_img_pc.png
+│   │   │   ├── assets_img_sp.png
 │   │   │   ├── sprite.png
 │   │   │   └── sprite_sp.png
 │   │   └── svg
 │   │       └── svg.svg
+│   ├── common
+│   │   ├── _footer.ect
+│   │   ├── _gnav.ect
+│   │   ├── _head.ect
+│   │   ├── _header.ect
+│   │   └── _script.ect
+│   ├── content
+│   │   └── images
+│   │       ├── assets_img_pc.png
+│   │       ├── assets_img_sp.png
+│   │       ├── content_img_pc.png
+│   │       └── content_img_sp.png
+│   ├── favicon.ico
 │   ├── index.html
-│   ├── second.html
+│   ├── menu1.html
+│   ├── menu2.html
+│   ├── menu3.html
+│   ├── menu4.html
 │   └── site
 │       ├── css
 │       │   ├── bootstrap
@@ -71,6 +95,10 @@ $ gulp
 │   │   │   ├── fontawesome-webfont.ttf
 │   │   │   └── fontawesome-webfont.woff
 │   │   ├── images
+│   │   │   ├── assets_img_pc.png
+│   │   │   ├── assets_img_sp.png
+│   │   │   ├── content_img_pc.png
+│   │   │   ├── content_img_sp.png
 │   │   │   ├── favicon.ico
 │   │   │   ├── frontnote.png
 │   │   │   ├── sprite.png
@@ -107,32 +135,46 @@ $ gulp
 │   └── src-sass-_style_guide.html
 ├── gulpfile.js
 ├── package.json
+├── site
+│   └── js
+│       └── common.js
 ├── src
+│   ├── css
 │   ├── ect
 │   │   ├── _base.ect
 │   │   ├── common
 │   │   │   ├── _footer.ect
-│   │   │   ├── _gnav.ect
 │   │   │   ├── _head.ect
 │   │   │   ├── _header.ect
 │   │   │   └── _script.ect
 │   │   ├── index.ect
-│   │   └── second.ect
+│   │   ├── menu1.ect
+│   │   ├── menu2.ect
+│   │   ├── menu3.ect
+│   │   └── menu4.ect
 │   ├── img
-│   │   └── assets
-│   │       ├── sprite.png
-│   │       └── sprite_sp.png
+│   │   ├── assets
+│   │   │   ├── assets_img_pc.png
+│   │   │   ├── assets_img_sp.png
+│   │   │   ├── sprite.png
+│   │   │   └── sprite_sp.png
+│   │   └── content
+│   │       ├── content_img_pc.png
+│   │       └── content_img_sp.png
 │   ├── include
 │   │   └── _const.js
 │   ├── js
-│   │   └── main.js
+│   │   ├── assets
+│   │   ├── main.js
+│   │   └── site
+│   │       └── common.js
 │   ├── sass
 │   │   ├── _sprite.scss
 │   │   ├── _sprite_sp.scss
 │   │   ├── _style_guide.scss
 │   │   ├── base
+│   │   │   ├── _a_reset.scss
 │   │   │   ├── _basic.scss
-│   │   │   ├── _reset.scss
 │   │   │   └── _util.scss
 │   │   ├── bootstrap
 │   │   │   ├── _alert.scss
@@ -242,16 +284,10 @@ $ gulp
 │   │   └── style
 │   │       └── _contents.scss
 │   ├── sprite
-│   │   ├── sprite01.png
-│   │   ├── sprite02.png
-│   │   └── sprite03.png
+│   │   └── sprite01.png
 │   ├── sprite_sp
-│   │   ├── sprite_sp01.png
-│   │   ├── sprite_sp02.png
-│   │   └── sprite_sp03.png
+│   │   └── sprite_sp01.png
 │   └── svg
-│       ├── svg01.svg
-│       ├── svg02.svg
-│       └── svg03.svg
+│       └── svg01.svg
 └── webpack.config.js
 ```
