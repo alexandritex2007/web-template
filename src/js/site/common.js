@@ -1,1 +1,65 @@
-$(document).ready(function(){$(".gotop").css("opacity",0),$(".gotop > a").click(function(){return $("html,body").animate({scrollTop:$("body").offset().top},{duration:"normal",easing:"swing",queue:!1}),!1}),$(window).scroll(function(){$(".l-footer_bottom_inner").offset().top-$(window).scrollTop()<=$(window).height()?($(".gotop").css("position","absolute"),$(".gotop").addClass("change")):($(".gotop").css("position","fixed"),$(".gotop").removeClass("change")),$(window).scrollTop()<200?$(".gotop").animate({opacity:0},{duration:"fast",easing:"linear",queue:!1}):$(".gotop").animate({opacity:1},{duration:"fast",easing:"linear",queue:!1})}),$(".text_overflow").each(function(){var t=$(this),o=t.html(),i=t.clone();for(i.css({display:"none",position:"absolute",overflow:"visible"}).width(t.width()).height("auto"),t.after(i);o.length>0&&i.height()>t.height();)o=o.substr(0,o.length-1),i.html(o+"...");t.html(i.html()),i.remove()});var t="_pc",o="_sp",i=641;$(".switch").each(function(){function e(){var e=parseInt($(window).width());e>=i?s.attr("src",s.attr("src").replace(o,t)).css({visibility:"visible"}):e<i&&s.attr("src",s.attr("src").replace(t,o)).css({visibility:"visible"})}var s=$(this);$(window).resize(function(){e()}),e()})});
+$(function(){
+	// go_top
+	$('.gotop').css('opacity',0);
+	$('.gotop > a').click(function(){
+		$('html,body').animate(
+			{'scrollTop': $('body').offset().top },
+			{'duration':'normal','easing':'swing','queue':false}
+		);
+		return false;
+	});
+	$(window).scroll(function(){ moveGoTop(); });
+	function moveGoTop(){
+		var x = $('.l-footer').offset().top - $(window).scrollTop();
+		if( x <= $(window).height() ){ $('.gotop').css( 'position', 'absolute' );
+		$('.gotop').addClass('change');
+		}
+		else{ $('.gotop').css( 'position', 'fixed' );
+		$('.gotop').removeClass('change');
+		}
+		if( $(window).scrollTop() < 200 )
+			$('.gotop').animate({'opacity':0}, {'duration':'fast','easing':'linear','queue':false});
+		else
+			$('.gotop').animate({'opacity':1}, {'duration':'fast','easing':'linear','queue':false});
+	}
+	//3点リーダー
+	$('.text_overflow').each(function() {
+		var $target = $(this);
+		var html = $target.html();
+		var $clone = $target.clone();
+		$clone
+			.css({
+				display: 'none',
+				position : 'absolute',
+				overflow : 'visible'
+			})
+			.width($target.width())
+			.height('auto');
+		$target.after($clone);
+		while((html.length > 0) && ($clone.height() > $target.height())) {
+			html = html.substr(0, html.length - 1);
+			$clone.html(html + '...');
+		}
+		$target.html($clone.html());
+		$clone.remove();
+	});
+	// img switch
+	var $setElem = $('.switch'),
+	pcName = '_pc',
+	spName = '_sp',
+	replaceWidth = 641;
+
+	$setElem.each(function(){
+		var $this = $(this);
+		function imgSize(){
+			var windowWidth = parseInt($(window).width());
+			if(windowWidth >= replaceWidth) {
+				$this.attr('src',$this.attr('src').replace(spName,pcName)).css({visibility:'visible'});
+			} else if(windowWidth < replaceWidth) {
+				$this.attr('src',$this.attr('src').replace(pcName,spName)).css({visibility:'visible'});
+			}
+		}
+		$(window).resize(function(){imgSize();});
+		imgSize();
+	});
+});

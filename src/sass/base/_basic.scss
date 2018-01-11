@@ -81,10 +81,15 @@ em {
 .screen-reader-text {
 	display: none;
 }
-
+.sponly {
+	display: none !important;
+}
 @include query($sp) {
 	.pconly {
 		display: none !important;
+	}
+	.sponly {
+		display: block !important;
 	}
 	body {
 		font-size: $spBaseFontSize;
