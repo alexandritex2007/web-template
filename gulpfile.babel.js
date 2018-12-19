@@ -1,12 +1,14 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     ect = require('gulp-ect'),
     sass = require('gulp-sass'),
+    babel = require('gulp-babel'),
+    webpackStream = require('webpack-stream'),
+    webpack = require('webpack'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     bulkSass = require('gulp-sass-bulk-import'),
     cssmin = require('gulp-cssmin'),
     rename = require('gulp-rename'),
-    uglify = require('gulp-uglify'),
     frontnote = require('gulp-frontnote'),
     tinyping = require('gulp-tinypng-compress'),
     spritesmith = require('gulp.spritesmith'),
@@ -15,33 +17,28 @@ var gulp = require('gulp'),
     svgmin = require('gulp-svgmin'),
     path = require('path'),
     plumber = require('gulp-plumber'),
-    browser = require('browser-sync'),
-    webpack = require('webpack'),
-    webpackStream = require('webpack-stream');
+    browser = require('browser-sync');
 
-var ectConfig = require('./src/include/_const.js');
-var SRC = 'src',
+
+const SRC = 'src',
     DIST = 'dist';
-// webpackの設定ファイルの読み込み
-var webpackConfig = require("./webpack.config");
 
-gulp.task('ect', function(){
+// ect
+gulp.task('ect', () => {
     gulp.src('src/ect/**/*.ect')
     .pipe(plumber())
-    .pipe(ect({data: function (file, cb) {
+    .pipe(ect({data(file, cb) {
         cb(ectConfig);
     }}))
     .pipe(gulp.dest(DIST))
     .pipe(browser.reload({stream:true}));
 });
 
-//style
-gulp.task('sass', function() {
+// sass
+gulp.task('sass', () => {
     gulp.src(SRC + '/sass/**/*.scss')
     .pipe(plumber())
-    .pipe(frontnote({
-        css: 'site/css/common.css'
-    }))
+    .pipe(frontnote({ css: 'site/css/common.css' }))
     .pipe(sourcemaps.init())
     .pipe(bulkSass())
     .pipe(sass({outputStyle: 'expanded'})) //nested,compact,expanded,compressed
@@ -58,7 +55,7 @@ gulp.task('sass', function() {
 });
 
 //browser sync
-gulp.task('server', function() {
+gulp.task('server', () => {
     browser({
         server: {
             baseDir: DIST
@@ -67,7 +64,7 @@ gulp.task('server', function() {
 });
 
 //CSSmin
-gulp.task('cssmin', function () {
+gulp.task('cssmin', () => {
     gulp.src(SRC + '/css/**/*.css')
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
@@ -76,29 +73,18 @@ gulp.task('cssmin', function () {
 });
 
 //webpack
-gulp.task('webpack',function(){
-    return webpackStream(webpackConfig, webpack)
+const webpackConfig = require('./webpack.config');
+
+gulp.task('webpack', () => {
+    gulp.src('./src/js/entry.js')
+    .pipe(plumber())
+    .pipe(webpackStream(webpackConfig, webpack))
     .pipe(gulp.dest(DIST + '/site/js/'));
 });
 
-//JSmin
-gulp.task('js', function() {
-    gulp.src(SRC + '/js/assets/**/*.js')
-    .pipe(plumber())
-    .pipe(uglify())
-    //.pipe(gulp.dest('./guide/site/js/min'))
-    .pipe(gulp.dest(DIST + '/assets/js/min'));
-
-    gulp.src(SRC + '/js/site/**/*.js')
-    .pipe(plumber())
-    .pipe(uglify())
-    //.pipe(gulp.dest('./guide/site/js/min'))
-    .pipe(gulp.dest(DIST + '/site/js'));
-});
-
 //sprite-pc
-gulp.task('sprite', function () {
-    var spriteData = gulp.src(SRC + '/sprite/*.png')
+gulp.task('sprite', () => {
+    const spriteData = gulp.src(SRC + '/sprite/*.png')
     .pipe(spritesmith({
         imgName: 'sprite.png',
         cssName: '_sprite.scss',
@@ -110,7 +96,7 @@ gulp.task('sprite', function () {
         cssOpts: {
             functions: false
         },
-        cssVarMap: function (sprite) {
+        cssVarMap(sprite) {
             sprite.name = 'sprite-' + sprite.name;
         }
     }));
@@ -119,8 +105,8 @@ gulp.task('sprite', function () {
 });
 
 //sprite_sp
-gulp.task('sprite_sp', function () {
-    var spriteData = gulp.src(SRC + '/sprite_sp/*.png')
+gulp.task('sprite_sp', () => {
+    const spriteData = gulp.src(SRC + '/sprite_sp/*.png')
     .pipe(spritesmith({
         imgName: 'sprite_sp.png',
         cssName: '_sprite_sp.scss',
@@ -131,7 +117,7 @@ gulp.task('sprite_sp', function () {
         cssOpts: {
             functions: false
         },
-        cssVarMap: function (sprite) {
+        cssVarMap(sprite) {
             sprite.name = 'sprite-' + sprite.name;
         }
     }));
@@ -141,7 +127,7 @@ gulp.task('sprite_sp', function () {
 });
 
 //img_min
-gulp.task('tinypng', function () {
+gulp.task('tinypng', () => {
     gulp.src(SRC + '/img/assets/**/*.{png,jpg,jpeg}')
     .pipe(tinyping({
         key: 'llZEaFTtjee2TrIOmoBP25AkPKY5BhCW'
@@ -158,11 +144,11 @@ gulp.task('tinypng', function () {
 });
 
 // svg
-gulp.task('svgstore', function () {
+gulp.task('svgstore', () => {
   return gulp
   .src(SRC + '/svg/**/*.svg')
-  .pipe(svgmin(function (file) {
-      var prefix = path.basename(file.relative, path.extname(file.relative));
+  .pipe(svgmin((file) => {
+      const prefix = path.basename(file.relative, path.extname(file.relative));
       return {
           plugins: [{
               cleanupIDs: {
@@ -175,7 +161,7 @@ gulp.task('svgstore', function () {
   .pipe(svgstore({ inlineSvg: true }))
 
   .pipe(cheerio({
-      run: function ($) {
+      run($) {
           $('[fill]').removeAttr('fill');
           $('[stroke]').removeAttr('stroke');
           $('svg').attr('style','display:none');
@@ -187,10 +173,10 @@ gulp.task('svgstore', function () {
 
 
 //watch
-gulp.task('default',['server'], function() {
+gulp.task('default',['server'], () => {
     gulp.watch(SRC + '/sass/**/*.scss',['sass']);
     gulp.watch(SRC + '/css/**/*.css',['cssmin']);
-    gulp.watch(SRC + '/js/**/*.js',['js']);
+    gulp.watch(SRC + '/js/entry.js', ['webpack']);
     gulp.watch(SRC + '/sprite/*.png',['sprite']);
     gulp.watch(SRC + '/sprite_sp/*.png',['sprite_sp']);
     gulp.watch(SRC + '/svg/*.svg',['svgstore']);
