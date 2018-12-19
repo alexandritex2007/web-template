@@ -22,6 +22,7 @@ const gulp = require('gulp'),
 
 const SRC = 'src',
     DIST = 'dist';
+const ectConfig = require('./src/include/_const.js');
 
 // ect
 gulp.task('ect', () => {
