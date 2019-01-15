@@ -78,15 +78,13 @@ gulp.task('cssmin', (done) => {
     done();
 });
 
-//webpack
+// webpack
 const webpackConfig = require('./webpack.config');
 
-gulp.task('webpack', (done) => {
-    gulp.src('./src/js/entry.js')
+gulp.task('webpack', () => {
+    return webpackStream(webpackConfig, webpack)
         .pipe(plumber())
-        .pipe(webpackStream(webpackConfig, webpack))
         .pipe(gulp.dest(DIST + '/site/js/'));
-    done();
 });
 
 //sprite-pc

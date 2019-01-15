@@ -1,19 +1,22 @@
 const webpack = require('webpack');
-const UglifyEsPlugin = require('uglify-es-webpack-plugin');
 
 module.exports = {
-  output: {
-    filename: "bundle.js"
+  entry: {
+    common: './src/js/common.js'
   },
-  mode: 'none',
+  devtool: 'inline-souce-map',
+  output: {
+    filename: '[name].bundle.js'
+  },
+  mode: 'production',//development,production
   plugins: [
-    new webpack.ProvidePlugin({ $: 'jquery' }),
-    new UglifyEsPlugin()
+    new webpack.ProvidePlugin({ $: 'jquery' })
   ],
   module: {
     rules: [
       {
         test: /\.js$/,
+        exclude: /(node_modules)/,
         use: [
           {
             loader: 'babel-loader',
@@ -26,5 +29,11 @@ module.exports = {
         ]
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      name: 'vendor',
+      chunks: 'initial',
+    }
   }
 }
