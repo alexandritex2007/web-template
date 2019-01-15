@@ -180,7 +180,7 @@ gulp.task('svgstore', () => {
 gulp.task('watch', () => {
     gulp.watch(SRC + '/sass/**/*.scss',gulp.parallel('sass'));
     gulp.watch(SRC + '/css/**/*.css',gulp.parallel('cssmin'));
-    gulp.watch(SRC + '/js/entry.js', gulp.parallel('webpack'));
+    gulp.watch(SRC + '/js/common.js', gulp.parallel('webpack'));
     gulp.watch(SRC + '/sprite/*.png',gulp.parallel('sprite'));
     gulp.watch(SRC + '/sprite_sp/*.png',gulp.parallel('sprite_sp'));
     gulp.watch(SRC + '/svg/*.svg',gulp.parallel('svgstore'));
