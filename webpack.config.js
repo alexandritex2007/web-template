@@ -2,6 +2,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
+    index: './src/js/index.js',
     common: './src/js/common.js'
   },
   devtool: 'inline-souce-map',
@@ -23,7 +24,8 @@ module.exports = {
             options: {
               presets: [
                 ['@babel/preset-env', { modules: false }]
-              ]
+              ],
+              plugins: ['@babel/plugin-transform-runtime']
             }
           }
         ]

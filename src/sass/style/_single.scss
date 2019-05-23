@@ -1,0 +1,13 @@
+/*===　single　===*/
+
+.single {
+
+}
+
+@include query($sp) {
+    .single {
+
+    }
+
+}
+

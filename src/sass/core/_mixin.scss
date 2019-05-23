@@ -8,14 +8,6 @@
 }
 //例：@include positionA (5px, 20px, 10px, 15px);
 
-
-//rem IE8対応
-@mixin fontsize($size: 24, $base: 16) {
-    font-size: $size + px;
-    font-size: ($size / $base) * 1rem;
-}
-//例：@include fontsize(12);
-
 //retina対応
 @mixin imgRetina($image, $extension, $width, $height) {
      background: url($image + '.' + $extension) no-repeat;

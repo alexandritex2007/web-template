@@ -59,39 +59,8 @@ li {
 em {
 	font-style: italic;
 }
-//clearfix
-.clearfix{
-	zoom: 1;
-	&:before,&:after{
-		content: "";
-		display: block;
-	}
-	&:after {
-		clear: both;
-	}
-}
 
-/*---　404page　---*/
-.error-404_heading {
-	font-size: 32px;
-	color: $siteColor;
-}
-
-/*---　search　---*/
-.screen-reader-text {
-	display: none;
-}
-
-.sponly {
-	display: none !important;
-}
 @include query($sp) {
-	.pconly {
-		display: none !important;
-	}
-	.sponly {
-		display: block !important;
-	}
 	body {
 		font-size: $spBaseFontSize;
 	}
@@ -113,28 +82,5 @@ em {
 	}
 	ol {
 		margin-bottom: $spTextBottom;
-	}
-
-	/*===　サイド余白 ===*/
-	%spPadding {
-		padding: $spPadding;
-	}
-	main > p {
-		@extend %spPadding;
-	}
-	main > ul {
-		@extend %spPadding;
-	}
-	main > dl {
-		@extend %spPadding;
-	}
-	main > h2 {
-		@extend %spPadding;
-	}
-	main > h3 {
-		@extend %spPadding;
-	}
-	main > h4 {
-		@extend %spPadding;
 	}
 }

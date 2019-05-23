@@ -1,7 +1,11 @@
 /*===　l-side ===*/
+.l-side {
 
-// @include query($sp) {
+}
+@include query($sp) {
+    .l-side {
 
+    }
+}
 
-// }
 

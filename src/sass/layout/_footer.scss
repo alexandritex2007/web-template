@@ -1,9 +1,7 @@
 /*=== l-footer ===*/
-// .l-footer {
-	// &_inner {
+.l-footer {
 
-	// }
-// }
+}
 /*---　gotop　---*/
 $gotopWidth: 45px;
 $gotopHeight: 45px;
@@ -32,12 +30,10 @@ $gotopHeight: 45px;
 	}
 }
 
-// @include query($sp) {
-// .l-footer {
-	// &_inner {
+@include query($sp) {
+	.l-footer {
 
-	// }
-// }
-// 	/*---　gotop　---*/
-// }
+	}
+	/*---　gotop　---*/
+}
 

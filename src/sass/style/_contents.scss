@@ -1,5 +1,31 @@
 /*=== contents ===*/
 
+
+
+
+
+// /*---　検索窓（無ければ削除）　---*/
+// .screen-reader-text {
+// 	display: none;
+// }
+
+// /*---　3点リーダー（無ければ削除）　---*/
+// .text_overflow {
+// 	overflow: hidden;
+// }
+
+.sponly {
+	display: none !important;
+}
+
 @include query($sp) {
 
+
+
+	.pconly {
+		display: none !important;
+	}
+	.sponly {
+		display: block !important;
+	}
 }

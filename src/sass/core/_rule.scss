@@ -2,13 +2,16 @@
 //                      flame
 // ************************************************************
 $sp: 640;
-$tablet: 768;
-$pc: 992;
-
+$tablet: 820;
+$pc: 1040;
 // ************************************************************
-//                      URL
+//                      URL・pass
 // ************************************************************
 $img_path:'../../';
+// flame-pass
+$template_img:'/assets/images';
+//content-pass
+$content_img:'/content/images';
 // ************************************************************
 //                      font
 // ************************************************************
@@ -37,19 +40,10 @@ $linkColor: #036EB8;
 $siteColor: #00afd6;
 // accent-color
 $accentColor: #dbf4f9;
-// error
-$errorColor: #e03535;
+// attention
+$attentionColor: #e03535;
 // warning
 $warningColor: #f9a712;
-
-// ************************************************************
-//                      pass
-// ************************************************************
-
-// flame-pass
-$template_img:'/assets/images';
-//content-pass
-$content_img:'/content/images';
 
 // ************************************************************
 //                      margin・padding
@@ -60,14 +54,19 @@ $textBottom: 30px;
 // bottom_margin（SP）
 $spTextBottom: 15px;
 // SP
-$spPadding: 0 15px !important;
+$spPadding: 20px;
+
+// section（PC）
+$secPadding: 80px;
+// section（SP）
+$spSecPadding: 40px;
 
 // ************************************************************
 //                      other
 // ************************************************************
 
 //opacity
-$opacity: 0.4;
+$opacity: 0.6;
 
 //radius
 $radius: 5px;

@@ -1,0 +1,89 @@
+/*===　text　===*/
+.text {
+	&_small {
+		font-size: $baseFontSize - 2;
+	}
+	&_big {
+		font-size: $baseFontSize + 2;
+	}
+}
+
+/*===　heading　===*/
+.heading {
+	&01 {
+		font-size: $baseFontSize + 8;
+		margin-bottom: $textBottom * 0.5;
+	}
+	&02 {
+		font-size: $baseFontSize + 6;
+		margin-bottom: $textBottom * 0.5;
+	}
+	&03 {
+		font-size: $baseFontSize + 4;
+		margin-bottom: $textBottom * 0.5;
+	}
+	&04 {
+		font-size: $baseFontSize + 2;
+		margin-bottom: $textBottom * 0.5;
+	}
+	&05 {
+		font-size: $baseFontSize + 0;
+		margin-bottom: $textBottom * 0.5;
+	}
+	&404 {
+		font-size: 32px;
+		color: $siteColor;
+	}
+}
+
+/*===　link　===*/
+.icon {
+	&_link {
+		&:after {
+			@include sprite($sprite-sprite100);
+			@extend %icon_position;
+		}
+	}
+	&_pdf {
+		&:after {
+			@include sprite($sprite-sprite101);
+			@extend %icon_position;
+		}
+	}
+}
+
+@include query($sp) {
+	/*===　text　===*/
+	.text {
+		&_small {
+			font-size: $spBaseFontSize - 2;
+		}
+		&_big {
+			font-size: $spBaseFontSize + 2;
+		}
+	}
+
+	/*===　heading　===*/
+	.heading {
+		&01 {
+			font-size: $spBaseFontSize + 8;
+		}
+		&02 {
+			font-size: $spBaseFontSize + 6;
+			margin-bottom: $spTextBottom * 0.5;
+		}
+		&03 {
+			font-size: $spBaseFontSize + 4;
+			margin-bottom: $spTextBottom * 0.5;
+		}
+		&04 {
+			font-size: $spBaseFontSize + 2;
+			margin-bottom: $spTextBottom * 0.5;
+		}
+		&05 {
+			font-size: $spBaseFontSize + 0;
+			margin-bottom: $spTextBottom * 0.5;
+		}
+	}
+}
+

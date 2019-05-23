@@ -1,0 +1,48 @@
+.l-content {
+    //コンテンツ横幅
+    &_w960 {
+        width: 960px;
+        margin: 0 auto;
+    }
+    &_w800 {
+        width: 800px;
+        margin: 0 auto;
+    }
+    //セクション上下余白
+    &_sec {
+        padding: $secPadding 0;
+        &_top {
+            padding-top: $secPadding;
+        }
+        &_bottom {
+            padding-bottom: $secPadding;
+        }
+    }
+}
+
+@include query($sp) {
+    .l-content {
+        //コンテンツ横幅
+        &_w960,
+        &_w800 {
+            width: auto;
+            padding-left: $spPadding;
+            padding-right: $spPadding;
+            .l-content_w960,
+            .l-content_w800 {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        //セクション上下余白
+        &_sec {
+            padding: $spSecPadding 0;
+            &_top {
+                padding-top: $spSecPadding;
+            }
+            &_bottom {
+                padding-bottom: $spSecPadding;
+            }
+        }
+    }
+}

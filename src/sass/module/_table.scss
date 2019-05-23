@@ -36,6 +36,15 @@
 			background-color: #f9f9f9;
 		}
 	}
+	&_responsive {
+		overflow-x: auto;
+		table {
+			width: 100%;
+			* {
+				word-break: normal;
+			}
+		}
+	}
 }
 
 @include query($sp) {

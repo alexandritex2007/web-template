@@ -13,7 +13,7 @@
 				background: $textColor;
 				border-radius: 50%;
 				position: absolute;
-				top: 9px;
+				top: 13px;
 				left: 0;
 			}
 			&:last-child{
@@ -38,7 +38,7 @@
 				border-radius: 50%;
 				border: #333 2px solid;
 				position: absolute;
-				top: 7px;
+				top: 10px;
 				left: 0;
 			}
 			&:last-child{
@@ -61,20 +61,27 @@
 	}
 }
 
-// @include query($sp) {
-// 	.list {
-// 		&_disc {
+@include query($sp) {
+	.list {
+		&_disc {
+			& > li{
+				&:before{
+					top: 10px;
+				}
+			}
+		}
 
-// 		}
+		&_circle {
+			& > li{
+				&:before{
+					top: 8px;
+				}
+			}
+		}
 
 
-// 		&_circle {
+		// &_number {
 
-// 		}
-
-
-// 		&_number {
-
-// 		}
-// 	}
-// }
+		// }
+	}
+}

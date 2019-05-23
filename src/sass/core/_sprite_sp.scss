@@ -14,16 +14,16 @@ $sprite-sprite-sp01-x: 0px;
 $sprite-sprite-sp01-y: 0px;
 $sprite-sprite-sp01-offset-x: 0px;
 $sprite-sprite-sp01-offset-y: 0px;
-$sprite-sprite-sp01-width: 60px;
-$sprite-sprite-sp01-height: 60px;
-$sprite-sprite-sp01-total-width: 60px;
-$sprite-sprite-sp01-total-height: 60px;
-$sprite-sprite-sp01-image: '/assets/images/sprite_sp.png';
-$sprite-sprite-sp01: (0px, 0px, 0px, 0px, 60px, 60px, 60px, 60px, '/assets/images/sprite_sp.png', 'sprite-sprite_sp01', );
-$spritesheet-width: 60px;
-$spritesheet-height: 60px;
-$spritesheet-image: '/assets/images/sprite_sp.png';
+$sprite-sprite-sp01-width: 159px;
+$sprite-sprite-sp01-height: 166px;
+$sprite-sprite-sp01-total-width: 159px;
+$sprite-sprite-sp01-total-height: 166px;
+$sprite-sprite-sp01-image: '/wp-content/themes/wp-template/assets/images/sprite_sp.png';
+$sprite-sprite-sp01: (0px, 0px, 0px, 0px, 159px, 166px, 159px, 166px, '/wp-content/themes/wp-template/assets/images/sprite_sp.png', 'sprite-sprite_sp01', );
+$spritesheet-width: 159px;
+$spritesheet-height: 166px;
+$spritesheet-image: '/wp-content/themes/wp-template/assets/images/sprite_sp.png';
 $spritesheet-sprites: ($sprite-sprite-sp01, );
-$spritesheet: (60px, 60px, '/assets/images/sprite_sp.png', $spritesheet-sprites, );
+$spritesheet: (159px, 166px, '/wp-content/themes/wp-template/assets/images/sprite_sp.png', $spritesheet-sprites, );
 
 

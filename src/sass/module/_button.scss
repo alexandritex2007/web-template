@@ -14,10 +14,10 @@
 		}
 	}
 	&_error {
-		color: $errorColor;
+		color: $attentionColor;
 		border: 1px solid;
 		&:hover {
-			background-color: lighten($errorColor,0%);
+			background-color: lighten($attentionColor,0%);
 			color: #FFF;
 		}
 	}

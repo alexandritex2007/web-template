@@ -1,20 +1,16 @@
 /*=== l-header ===*/
-// .l-header {
-	// &_inner {
+.l-header {
 
-	// }
-// }
+}
 /*---　gnav　---*/
 
 /*--- search ---*/
 
-// @include query($sp) {
-// .l-header {
-	// &_inner {
+@include query($sp) {
+    .l-header {
 
-	// }
-// }
-// 	/*---　gnav　---*/
+    }
+    /*---　gnav　---*/
 
-// 	/*--- search ---*/
-// }
+    /*--- search ---*/
+}

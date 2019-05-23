@@ -1,0 +1,214 @@
+/*
+#styleguide
+
+ボーダーなし
+```
+<table class="table">
+	<thead>
+		<tr>
+			<th>table</th>
+			<th>table</th>
+			<th>table</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+	</tbody>
+</table>
+
+
+```
+*/
+
+/*
+#styleguide
+
+ボーダーあり
+```
+<table class="table table_border">
+	<thead>
+		<tr>
+			<th>table</th>
+			<th>table</th>
+			<th>table</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+	</tbody>
+</table>
+
+
+```
+*/
+
+/*
+#styleguide
+
+レイアウト１
+```
+<table class="table table_layout01">
+	<thead>
+		<tr>
+			<th>table</th>
+			<th>table</th>
+			<th>table</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+	</tbody>
+</table>
+
+
+```
+*/
+
+/*
+#styleguide
+
+テーブル位置センター
+```
+<table class="table table_layout01 table_center">
+	<thead>
+		<tr>
+			<th>table</th>
+			<th>table</th>
+			<th>table</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+		<tr>
+			<th>table</th>
+			<td>table</td>
+			<td>table</td>
+		</tr>
+	</tbody>
+</table>
+
+
+```
+*/
+
+/*
+#styleguide
+
+ストライプ
+```
+<table class="table table_border table_stripe">
+	<thead>
+		<tr>
+			<th>table_stripe</th>
+			<th>table_stripe</th>
+			<th>table_stripe</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>table_stripe</th>
+			<td>table_stripe</td>
+			<td>table_stripe</td>
+		</tr>
+		<tr>
+			<th>table_stripe</th>
+			<td>table_stripe</td>
+			<td>table_stripe</td>
+		</tr>
+		<tr>
+			<th>table_stripe</th>
+			<td>table_stripe</td>
+			<td>table_stripe</td>
+		</tr>
+		<tr>
+			<th>table_stripe</th>
+			<td>table_stripe</td>
+			<td>table_stripe</td>
+		</tr>
+	</tbody>
+</table>
+
+
+```
+*/
+
+/*
+#styleguide
+
+レスポンシブ
+```
+<div class="table_responsive">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>table_stripe</th>
+				<th>table_stripe</th>
+				<th>table_stripe</th>
+				<th>table_stripe</th>
+				<th>table_stripe</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>table_stripe</th>
+				<td>table_stripe</td>
+				<td>table_stripe</td>
+				<td>table_stripe</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+```
+*/
