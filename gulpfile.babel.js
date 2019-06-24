@@ -43,20 +43,17 @@ gulp.task('sass', (done) => {
     .pipe(plumber())
     .pipe(frontnote({
       out: 'dist/guide/',
-      css: '../site/css/common.css',
+      css: '../css/common.css',
       title: 'Style Guide'
     }))
     .pipe(sourcemaps.init())
     .pipe(bulkSass())
     .pipe(sass({outputStyle: 'expanded'})) //nested,compact,expanded,compressed
     .pipe(autoprefixer({
-        // ☆IEは9以上、Androidは4以上、iOS Safariは8以上
-        // その他は最新2バージョンで必要なベンダープレフィックスを付与する設定
-        browsers: ['last 2 versions', 'ie >= 9', 'Android >= 4','ios_saf >= 8'],
         cascade: false
     }))
     .pipe(sourcemaps.write('../maps/'))
-    .pipe(gulp.dest(DIST + '/site/css'))
+    .pipe(gulp.dest(DIST + '/css'))
     .pipe(browser.reload({stream:true}));
   done();
 });
@@ -86,7 +83,7 @@ const webpackConfig = require('./webpack.config');
 gulp.task('webpack', () => {
   return webpackStream(webpackConfig, webpack)
     .pipe(plumber())
-    .pipe(gulp.dest(DIST + '/site/js/'));
+    .pipe(gulp.dest(DIST + '/js/'));
 });
 
 //sprite-pc
