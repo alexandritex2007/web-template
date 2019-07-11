@@ -105,7 +105,7 @@ gulp.task('sprite', (done) => {
     }
   }));
   spriteData.img.pipe(gulp.dest(SRC + '/img/assets/'));
-  spriteData.css.pipe(gulp.dest(SRC + '/sass/'));
+  spriteData.css.pipe(gulp.dest(SRC + '/sass/core/'));
   done();
 });
 
@@ -127,7 +127,7 @@ gulp.task('sprite_sp', (done) => {
       }
     }));
   spriteData.img.pipe(gulp.dest(SRC + '/img/assets/'))
-  spriteData.css.pipe(gulp.dest(SRC + '/sass/'));
+  spriteData.css.pipe(gulp.dest(SRC + '/sass/core/'));
   done();
 });
 
