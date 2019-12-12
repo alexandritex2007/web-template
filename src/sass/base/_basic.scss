@@ -22,20 +22,20 @@ p {
 	@extend %lineHeight;
 }
 h1 {
-	@extend %lineHeight;
+	@extend %headingLineHeight;
 	margin-bottom: $textBottom;
 }
 h2 {
-	@extend %lineHeight;
+	@extend %headingLineHeight;
 }
 h3 {
-	@extend %lineHeight;
+	@extend %headingLineHeight;
 }
 h4 {
-	@extend %lineHeight;
+	@extend %headingLineHeight;
 }
 h5 {
-	@extend %lineHeight;
+	@extend %headingLineHeight;
 }
 th {
 	@extend %lineHeight;

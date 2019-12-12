@@ -1,13 +1,17 @@
 /*=== contents ===*/
 
-
-
-
-
-// /*---　検索窓（無ければ削除）　---*/
-// .screen-reader-text {
-// 	display: none;
-// }
+/*---　検索窓（無ければ削除）　---*/
+.search {
+	&_window {
+		&_form {
+		}
+		&_field {
+			border: solid 1px #ccc;
+		}
+		&_btn {
+		}
+	}
+}
 
 // /*---　3点リーダー（無ければ削除）　---*/
 // .text_overflow {

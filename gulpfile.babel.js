@@ -22,11 +22,12 @@ const gulp = require('gulp'),
 
 const SRC = 'src',
   DIST = 'dist';
+const gulpConfPass = require('./gulpconfig.json');
 const ectConfig = require('./src/include/_const.js');
 
 // ect
 gulp.task('ect', (done) => {
-  gulp.src('src/ect/**/*.ect')
+  gulp.src(['src/ect/**/*.ect','!src/ect/**/_*.ect'])
     .pipe(plumber())
     .pipe(ect({data(file, cb) {
         cb(ectConfig);
@@ -39,7 +40,7 @@ gulp.task('ect', (done) => {
 
 // sass
 gulp.task('sass', (done) => {
-  gulp.src(SRC + '/sass/**/*.scss')
+  gulp.src(['src/sass/**/*.scss','!src/sass/**/_*.scss'])
     .pipe(plumber())
     .pipe(frontnote({
       out: 'dist/guide/',
@@ -48,10 +49,7 @@ gulp.task('sass', (done) => {
     }))
     .pipe(sourcemaps.init())
     .pipe(bulkSass())
-    .pipe(sass({outputStyle: 'expanded'})) //nested,compact,expanded,compressed
-    .pipe(autoprefixer({
-        cascade: false
-    }))
+    .pipe(sass({outputStyle: 'compressed'})) //nested,compact,expanded,compressed
     .pipe(sourcemaps.write('../maps/'))
     .pipe(gulp.dest(DIST + '/css'))
     .pipe(browser.reload({stream:true}));
@@ -134,11 +132,11 @@ gulp.task('sprite_sp', (done) => {
 //img_min
 gulp.task('tinypng', (done) => {
   gulp.src(SRC + '/img/assets/**/*.{png,jpg,jpeg}')
-    .pipe(tinyping({key: 'llZEaFTtjee2TrIOmoBP25AkPKY5BhCW'}))
+    .pipe(tinyping({key: gulpConfPass.tinypngAPIKey}))
     .pipe(gulp.dest(DIST + '/assets/images/'));
 
   gulp.src(SRC + '/img/content/**/*.{png,jpg,jpeg}')
-    .pipe(tinyping({key: 'llZEaFTtjee2TrIOmoBP25AkPKY5BhCW'}))
+    .pipe(tinyping({key: gulpConfPass.tinypngAPIKey}))
     .pipe(gulp.dest(DIST + '/content/images/'));
   done();
 });
@@ -183,5 +181,7 @@ gulp.task('watch', () => {
   gulp.watch(SRC + '/img/**/*.{png,jpg,jpeg}',gulp.parallel('tinypng'));
   gulp.watch(SRC + '/ect/**/*.ect',gulp.parallel('ect'));
 });
+
+gulp.task('all',gulp.series(gulp.parallel('webpack','sprite','sprite_sp','svgstore','tinypng','sass')));
 gulp.task("default",gulp.series(gulp.parallel("server", "watch")));
 
