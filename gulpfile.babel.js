@@ -182,6 +182,6 @@ gulp.task('watch', () => {
   gulp.watch(SRC + '/ect/**/*.ect',gulp.parallel('ect'));
 });
 
-gulp.task('all',gulp.series(gulp.parallel('webpack','sprite','sprite_sp','svgstore','tinypng','sass')));
+gulp.task('all',gulp.series(gulp.parallel('webpack','sprite','sprite_sp','svgstore','tinypng','sass','ect')));
 gulp.task("default",gulp.series(gulp.parallel("server", "watch")));
 
