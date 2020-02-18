@@ -1,5 +1,5 @@
 const pcName = '_pc',
-spName = '_sp';
+      spName = '_sp';
 
 export function PcImgSwitch () {
   $('.switch').each(function(){

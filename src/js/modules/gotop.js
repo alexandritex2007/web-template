@@ -1,4 +1,4 @@
-export default function() {
+export function gotop() {
   $('.gotop').css('opacity',0);
   $('.gotop > a').click(function(){
     $('html,body').animate({

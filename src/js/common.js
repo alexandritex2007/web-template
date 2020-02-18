@@ -1,37 +1,45 @@
-import CheckDevice from './modules/checkDevice';
-import ScrollEvent from './modules/scrollEvent';
-import Ellipsis from './modules/ellipsis';
-import Gotop from './modules/gotop';
-import {PcImgSwitch,SpImgSwitch} from './modules/imgswitch';
+import { checkDevice } from './modules/checkDevice';
+import { scrollEvent } from './modules/scrollEvent';
+import { ellipsis } from './modules/ellipsis';
+import { gotop } from './modules/gotop';
+import { PcImgSwitch,SpImgSwitch } from './modules/imgswitch';
 
 $(function(){
-  Ellipsis();
-  Gotop();
+  ellipsis(); //3点リーダー
+  gotop(); //トップに戻るボタン
+
 });
 
+//PC・SP切り替え
 let resizeTimer = null;
 $(window).on('load resize',function(){
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(function(){
-    if ( CheckDevice() === 'PC' ) {
-      setCookiePc();
-    }
     deviceSwitch();
   },300);
 });
-
-//PC・SP切り替え関数
+//PC・SP処理記述箇所
 function deviceSwitch() {
-  //SPの時の処理
-  if ( CheckDevice() === 'SP' ) {
+  if ( checkDevice() === 'PC' ) {
+    //PCの時の処理
+
+    PcImgSwitch();
+    return;
+  }
+  if ( checkDevice() === 'SP' ) {
+    //SPの時の処理
+
     SpImgSwitch();
     return;
   }
-  //PCの時の処理、判定不可の時の処理
-  PcImgSwitch();
-  return;
 }
 
 $(window).scroll(function(){
-  ScrollEvent();
+  /*
+  scrollEvent($('#hoge'), hoge(), 0.7);
+  第一引数：発火ターゲット
+  第二引数：発火した時の処理
+  第三引数：発火する画面位置（default = 0.8）
+  */
+  scrollEvent();
 });

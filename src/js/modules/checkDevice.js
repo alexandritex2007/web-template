@@ -1,5 +1,5 @@
 const breakPointSp = 640;
-export default function () {
+export function checkDevice() {
   let windowWidth = $(window).width();
   //pc判定
   if (windowWidth > breakPointSp) {
