@@ -36,7 +36,7 @@ function deviceSwitch() {
 
 $(window).scroll(function(){
   /*
-  scrollEvent($('#hoge'), hoge(), 0.7);
+  scrollEvent($('#hoge'), hoge, 0.7);
   第一引数：発火ターゲット
   第二引数：発火した時の処理
   第三引数：発火する画面位置（default = 0.8）
