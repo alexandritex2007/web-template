@@ -7,10 +7,22 @@
 	&left {
 		float: left;
 		margin-right: 30px;
+		@include sp {
+			display: flex;
+			justify-content: center;
+			float: none;
+			margin: 0 0 $spTextBottom;
+		}
 	}
 	&right {
 		float: right;
 		margin-left: 30px;
+		@include sp {
+			display: flex;
+			justify-content: center;
+			float: none;
+			margin: 0 0 $spTextBottom;
+		}
 	}
 }
 
@@ -25,30 +37,5 @@
 		font-size: 12px;
 		line-height: 1.3;
 		padding: 0;
-	}
-}
-
-@include query($sp) {
-	/*---　要素の配置　---*/
-	%align_none {
-    display: flex;
-    justify-content: center;
-		float: none;
-		margin: 0 0 $spTextBottom;
-	}
-	.align {
-		&left {
-			@extend %align_none;
-		}
-		&right {
-			@extend %align_none;
-		}
-    }
-
-	/*---　キャプション　---*/
-	 .caption {
-		& span {
-
-		}
 	}
 }

@@ -78,8 +78,14 @@
 //例@include arrow(right,20,#333);
 
 //media querys
-@mixin query($size) {
-    @media screen and (max-width: $size + px) {
+@mixin sp {
+    @media screen and (max-width: $sp) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width:$sp + 1) and ( max-width:$tablet) {
         @content;
     }
 }

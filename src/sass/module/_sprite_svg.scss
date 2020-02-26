@@ -8,6 +8,17 @@
 	&01 {
 		@extend %dib;
 		@include sprite($sprite-sprite01);
+		@include sp {
+			@include sprite($sprite-sprite_sp01);
+		}
+	}
+	&02 {
+		@extend %dib;
+		@include sprite($sprite-sprite02);
+	}
+	&03 {
+		@extend %dib;
+		@include sprite($sprite-sprite03);
 	}
 }
 /*---　SVG　---*/
@@ -15,20 +26,7 @@
 	&01 {
 		width: 100px;
 		fill: $siteColor;
-	}
-}
-
-
-@include query($sp) {
-	/*---　sprite　---*/
-	.sprite {
-		&01 {
-			@include sprite($sprite-sprite_sp01);
-		}
-	}
-	/*---　SVG　---*/
-	.svg {
-		&01 {
+		@include sp {
 			width: 100px;
 		}
 	}

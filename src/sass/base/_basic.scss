@@ -11,6 +11,9 @@ body {
 	font-family: $gothic;
 	color: $textColor;
 	-webkit-font-smoothing: antialiased;
+	@include sp {
+		font-size: $spBaseFontSize;
+	}
 }
 a {
 	color: $linkColor;
@@ -20,6 +23,9 @@ a {
 p {
 	margin-bottom: $textBottom;
 	@extend %lineHeight;
+	@include sp {
+		margin-bottom: $spTextBottom;
+	}
 }
 h1 {
 	@extend %headingLineHeight;
@@ -52,6 +58,9 @@ dl {
 dl,ul,ol {
 	margin-bottom: $textBottom;
 	padding: 0;
+	@include sp {
+		margin-bottom: $spTextBottom;
+	}
 }
 li {
 	@extend %lineHeight;
@@ -59,28 +68,9 @@ li {
 em {
 	font-style: italic;
 }
-
-@include query($sp) {
-	body {
-		font-size: $spBaseFontSize;
-	}
-	p {
-		margin-bottom: $spTextBottom;
-	}
-	img {
+img {
+	@include sp {
 		max-width: 100%;
 		height: auto;
-	}
-	table {
-		margin-bottom: $spTextBottom;
-	}
-	dl {
-		margin-bottom: $spTextBottom;
-	}
-	ul {
-		margin-bottom: $spTextBottom;
-	}
-	ol {
-		margin-bottom: $spTextBottom;
 	}
 }

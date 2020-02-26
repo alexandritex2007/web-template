@@ -41,21 +41,5 @@
 	}
 }
 
-@include query($sp) {
-	.btn {
-		padding: ($btn_v - 0) ($btn_h - 5);
-		font-size: $spBaseFontSize;
-		// &_standard {
-		// }
-		// &_error {
-		// }
-		// &_warning {
-		// }
-		&_small {
-			font-size: $baseFontSize - 2;
-			padding: ($btn_v - 10) ($btn_h - 15);
-		}
-	}
-}
 
 

@@ -10,7 +10,7 @@
 	.pl#{$i * 5} { padding-left: 5px * $i !important; }
 }
 
-@include query($sp) {
+@include sp {
 	@for $i from 0 through 14 {
 		.sp_mt#{$i * 5} { margin-top: 5px * $i !important; }
 		.sp_mr#{$i * 5} { margin-right: 5px * $i !important; }

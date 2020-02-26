@@ -2,18 +2,14 @@
 /*---　youtube　---*/
 .youtube {
 	margin-bottom: $textBottom;
-	iframe {
-		@extend %m0a;
-	}
-}
-
-@include query($sp) {
-	/*---　youtube　---*/
-	.youtube {
+	@include sp {
 		position: relative;
 		width: 100%;
 		padding-top: 56.25%;
-		iframe {
+	}
+	iframe {
+		@extend %m0a;
+		@include sp {
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -22,4 +18,3 @@
 		}
 	}
 }
-

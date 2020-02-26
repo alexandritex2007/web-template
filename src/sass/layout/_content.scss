@@ -1,6 +1,12 @@
 .l-content {
     position: relative;
     //コンテンツ横幅
+    &_w1040 {
+        width: 1040px;
+        margin: 0 auto;
+        @include sp {
+        }
+    }   
     &_w960 {
         width: 960px;
         margin: 0 auto;
@@ -21,14 +27,16 @@
     }
 }
 
-@include query($sp) {
+@include sp {
     .l-content {
         //コンテンツ横幅
+        &_w1040,
         &_w960,
         &_w800 {
             width: auto;
             padding-left: $spPadding;
             padding-right: $spPadding;
+            .l-content_w1040,
             .l-content_w960,
             .l-content_w800 {
                 padding-left: 0;

@@ -18,18 +18,15 @@
 // 	overflow: hidden;
 // }
 
-.sponly {
-	display: none !important;
-}
-
-@include query($sp) {
-
-
-
-	.pconly {
+.pconly {
+	@include sp {
 		display: none !important;
 	}
-	.sponly {
+}
+
+.sponly {
+	display: none !important;
+	@include sp {
 		display: block !important;
 	}
 }
