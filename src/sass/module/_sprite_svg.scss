@@ -12,14 +12,6 @@
 			@include sprite($sprite-sprite_sp01);
 		}
 	}
-	&02 {
-		@extend %dib;
-		@include sprite($sprite-sprite02);
-	}
-	&03 {
-		@extend %dib;
-		@include sprite($sprite-sprite03);
-	}
 }
 /*---　SVG　---*/
 .svg {
