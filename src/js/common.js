@@ -1,7 +1,7 @@
-import { checkDevice } from './modules/checkDevice';
-import { scrollEvent } from './modules/scrollEvent';
-import { ellipsis } from './modules/ellipsis';
-import { gotop } from './modules/gotop';
+import checkDevice from './modules/checkDevice';
+import scrollEvent from './modules/scrollEvent';
+import ellipsis from './modules/ellipsis';
+import gotop from './modules/gotop';
 import { PcImgSwitch,SpImgSwitch } from './modules/imgswitch';
 
 $(function(){

@@ -1,4 +1,4 @@
-export function ellipsis() {
+export default function() {
   $('.text_overflow').each(function() {
     const $target = $(this),
     $clone = $target.clone();

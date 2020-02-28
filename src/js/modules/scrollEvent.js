@@ -4,7 +4,7 @@
  * @param func 発火した時の処理
  * @param correction 発火する画面位置
  */
-export function scrollEvent (Target, func, correction = 0.8) {
+export default function(Target, func, correction = 0.8) {
   Target.each(function(){
     const target = $(this).offset().top;
     const windowTop = $(window).scrollTop();
