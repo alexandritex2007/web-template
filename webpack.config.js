@@ -11,7 +11,10 @@ module.exports = {
   },
   mode: 'production',//development,production
   plugins: [
-    new webpack.ProvidePlugin({ $: 'jquery' })
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
   ],
   module: {
     rules: [
