@@ -41,5 +41,5 @@ $(window).scroll(function(){
   第二引数：発火した時の処理
   第三引数：発火する画面位置（default = 0.8）
   */
-  scrollEvent();
+  // scrollEvent();
 });

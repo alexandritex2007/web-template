@@ -13,6 +13,36 @@
 	}
 }
 
+/*---　gotop　---*/
+.gotop {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 45px;
+		height: 45px;
+		background-color: $siteColor;
+		&::before {
+			display: inline-block;
+			content: '';
+			width: 12px;
+			height: 12px;
+			border: 0px;
+			border-top: solid 2px #fff;
+			border-right: solid 2px #fff;
+			position: absolute;
+			top: calc(50% - 4px);
+			left: 50%;
+			transform: rotate(-45deg) translate(-50%);
+			transform-origin: 0;
+		}
+	}
+}
+
 // /*---　3点リーダー（無ければ削除）　---*/
 // .text_overflow {
 // 	overflow: hidden;
