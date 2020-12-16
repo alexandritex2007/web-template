@@ -1,6 +1,16 @@
 /*===　single　===*/
 
 .single {
-
+    ul {
+		@include listDisc($color: $siteColor);
+		@include sp {
+			@include listDisc($posTop: 10px, $color: $siteColor);
+		}
+    }
+    ol {
+		& li{
+			@include listNumber;
+		}
+    }
 }
 

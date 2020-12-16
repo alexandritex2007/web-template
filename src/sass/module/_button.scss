@@ -1,21 +1,42 @@
 /*===　btn 　===*/
 .btn {
 	display: inline-block;
-	padding: $btn_v $btn_h;
-	text-align: center;
-	font-size: $baseFontSize;
-	@extend %animation;
-	&_standard {
-		color: $siteColor;
-		border: 1px solid;
-		&:hover {
+	min-width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+	@include transition;
+	@include sp {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
+		@include transition;
+	}
+	&_skin {
+		&01 {
+			color: $siteColor;
+			border: 1px solid;
+			&:hover {
+				background-color: $siteColor;
+				color: #FFF;
+			}
+		}
+		&02 {
 			background-color: $siteColor;
 			color: #FFF;
+			border: 1px solid $siteColor;
+			&:hover {
+				background-color: #fff;
+				color: $siteColor;
+			}
 		}
 	}
 	&_error {
 		color: $attentionColor;
-		border: 1px solid;
+		border: 1px solid $attentionColor;
 		&:hover {
 			background-color: lighten($attentionColor,0%);
 			color: #FFF;
@@ -23,21 +44,42 @@
 	}
 	&_warning {
 		color: $warningColor;
-		border: 1px solid;
+		border: 1px solid $warningColor;
 		&:hover {
 			background-color: lighten($warningColor,0%);
 			color: #FFF;
 		}
 	}
 	&_small {
-		font-size: $baseFontSize - 2;
-		padding: ($btn_v - 5) ($btn_h - 15);
+		display: inline-block;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+		text-align: center;
+		@include transition;
+		@include sp {
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-left: 10px;
+			padding-right: 10px;
+			@include transition;
+		}
 	}
 	&_big {
 		width: 100%;
 	}
 	&_radius {
-		border-radius: $radius;
+		@include radius;
+	}
+	&_wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: $textBottom 0;
+		@include sp {
+			padding: $spTextBottom 0;
+		}
 	}
 }
 

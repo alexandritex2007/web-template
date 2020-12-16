@@ -1,58 +1,70 @@
-//position: absoluteのposition指定
-@mixin positionA ($top: auto, $right: auto,$bottom: auto, $left: auto) {
+// font-size(rem)
+@function rem($pixels) {
+    @return $pixels / $baseFontSize * 1rem;
+}
+
+// heading
+
+
+// transition
+@mixin transition($transition: $speed ease) {
+    transition: $transition;
+}
+
+// content
+@mixin contentWidth($width: 960) {
+    .l-content {
+        position: relative;
+        &_w#{$width} {
+            width: $width + px;
+            margin: 0 auto;
+            @include sp {
+                width: auto;
+                @include spPadding;
+                .l-content_w#{$width} {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+// padding
+@mixin spPadding($left: $spPadding, $right: $spPadding) {
+    padding-left: $left;
+    padding-right: $right;
+}
+
+// position: absoluteのposition指定
+@mixin positionCenter($top: 50%, $left: 50%, $translateX: -50%, $translateY: -50%) {
     position: absolute;
     top: $top;
-    right: $right;
-    bottom: $bottom;
     left: $left;
-}
-//例：@include positionA (5px, 20px, 10px, 15px);
-
-//retina対応
-@mixin imgRetina($image, $extension, $width, $height) {
-     background: url($image + '.' + $extension) no-repeat;
-     width: $width;
-     height: $height;
-
-     @media (min--moz-device-pixel-ratio: 1.3),
-           (-o-min-device-pixel-ratio: 2.6/2),
-           (-webkit-min-device-pixel-ratio: 1.3),
-           (min-device-pixel-ratio: 1.3),
-           (min-resolution: 1.3dppx) {
-                background-image: url($image + '-2x' + '.' + $extension) no-repeat;
-                background-size: $width $height;
-     }
+    transform: translateX($translateX);
+    transform: translateY($translateY);
 }
 
-//例：@include imgRetina(imgFileName, png, 100px, 40px);
-
-//準備するファイル
-//imgFileName.png
-//imgFileName-2x.png
-
-//縦センター
-@mixin ht($ht) {
-    height: $ht + px;
-    line-height: $ht + px;
+// 文字間
+@mixin letterSpace($letterSpace) {
+    letter-spacing: $letterSpace + em;
+    text-indent: $letterSpace + em;
 }
-//例：@include ht(15);
 
-//文字間
-@mixin ls($ls) {
-    letter-spacing: $ls + em;
-    text-indent: $ls + em;
-}
-//例：@include ls(0.5);
-
-//正円
+// 正円
 @mixin circle($size){
     width: $size + px;
     height: $size + px;
     @include border-radius(100%);
 }
 
-//例：@include circle(50);
-
+// 3点リーダー
+@mixin ellipsis($line){
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+}
 
 //矢印
 @mixin arrow($direction: right, $size: 10, $color: $black){
@@ -75,15 +87,81 @@
     border-#{$set}-color: $color;
 }
 
-//例@include arrow(right,20,#333);
 
-//media querys
+// radius
+@mixin radius($radius: $radius) {
+    border-radius: $radius;
+}
+
+// listDisc
+@mixin listDisc($size: 3px, $posTop: 13px, $color: $textColor) {
+    margin-left: 10px;
+    & li{
+        margin-bottom: 5px;
+        position: relative;
+        padding-left: 14px;
+        &:before{
+            content: "";
+            display: block;
+            width: $size;
+            height: $size;
+            background-color: $color;
+            border-radius: 50%;
+            position: absolute;
+            top: $posTop;
+            left: 0;
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+// listCicle
+@mixin listCicle($color: #333) {
+    margin-left: 10px;
+    & > li{
+        margin-bottom: 5px;
+        position: relative;
+        padding-left: 14px;
+        &:before{
+            content: "";
+            display: block;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            border: $color 2px solid;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            @include sp {
+                top: 8px;
+            }
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+// listNumber
+@mixin listNumber {
+    margin-bottom: 5px;
+    position: relative;
+    margin-left: 20px;
+    list-style: decimal;
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+// media querys
 @mixin sp {
     @media screen and (max-width: $sp) {
         @content;
     }
 }
-
 @mixin tablet {
     @media screen and (min-width:$sp + 1) and ( max-width:$tablet) {
         @content;

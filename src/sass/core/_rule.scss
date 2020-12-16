@@ -1,78 +1,73 @@
 // ************************************************************
-//                      flame
+//                      breakpoint
 // ************************************************************
 $sp: 767px;
 $tablet: 1024px;
 // ************************************************************
 //                      URL・pass
 // ************************************************************
-$img_path:'../../';
+$rootPath: '../../';
 // flame-pass
-$template_img:'/assets/images';
-//content-pass
-$content_img:'/content/images';
+$assetsImgPath: $rootPath + '/assets/images/';
+// content-pass
+$contentImgPath: $rootPath + '../content/images/';
 // ************************************************************
 //                      font
 // ************************************************************
-//base-font-size
-$baseFontSize: 16px;
-//sp-base-font-size
-$spBaseFontSize: 14px;
-//sans-serif(normal)
+// base-font-size
+$baseFontSize: 16;
+// sp-base-font-size
+$spBaseFontSize: 14;
+// sans-serif(normal)
 $gothic: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro', 'メイリオ',Meiryo, 'ＭＳ Ｐゴシック',sans-serif;
-//sans-serif(bold)
-$gothicB: 'ヒラギノ角ゴ Pro W6','Hiragino Kaku Gothic Pro', 'メイリオ',Meiryo, 'ＭＳ Ｐゴシック',sans-serif;
-//serif(normal)
+// sans-serif(bold)
+$gothicBold: 'ヒラギノ角ゴ Pro W6','Hiragino Kaku Gothic Pro', 'メイリオ',Meiryo, 'ＭＳ Ｐゴシック',sans-serif;
+// serif(normal)
 $mincho: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
-//serif(bold)
-$minchoB: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
-// font-color
-$textColor: #323232;
-// link-font-color
-$linkColor: #036EB8;
-
+// serif(bold)
+$minchoBold: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
 // ************************************************************
 //                      color
 // ************************************************************
-
 // site-color
 $siteColor: #00afd6;
 // accent-color
 $accentColor: #dbf4f9;
-// attention
+// attention-color
 $attentionColor: #e03535;
-// warning
+// warning-color
 $warningColor: #f9a712;
-
+// font-color
+$textColor: #323232;
+// link-font-color
+$linkColor: #036EB8;
 // ************************************************************
 //                      margin・padding
 // ************************************************************
-
 // bottom_margin（PC）
 $textBottom: 30px;
 // bottom_margin（SP）
 $spTextBottom: 15px;
 // SP
 $spPadding: 20px;
-
 // section（PC）
-$secPadding: 80px;
+$blockPadding: 80px;
 // section（SP）
-$spSecPadding: 40px;
-
+$spBlockPadding: 40px;
 // ************************************************************
 //                      other
 // ************************************************************
-
-//opacity
+// opacity
 $opacity: 0.6;
-
-//radius
-$radius: 5px;
-
-//btn_padding
-$btn_v: 10px;
-$btn_h: 25px;
+// radius
+$radius: 10px;
+// transition（speed）
+$speed: 0.3s;
+// transition（delay）
+$delay: 1s;
+// btn_padding
+$btnY: 10px;
+$btnX: 24px;
 
 
 

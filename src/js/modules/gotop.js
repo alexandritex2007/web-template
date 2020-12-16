@@ -1,3 +1,6 @@
+/**
+ * トップに戻るボタン
+ */
 export default function() {
   $('.gotop').css('opacity',0);
   $('.gotop > a').click(function(){

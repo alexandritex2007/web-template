@@ -1,5 +1,8 @@
 /*=== contents ===*/
 
+
+
+
 /*---　検索窓（無ければ削除）　---*/
 .search {
 	&_window {
@@ -9,7 +12,31 @@
 			border: solid 1px #ccc;
 		}
 		&_btn {
+			&::before {
+				display: inline-block;
+				content: '';
+				@include sprite($sprite-sprite102);
+			}
 		}
+	}
+}
+
+/*---　404　---*/
+.error-404{
+	padding: 120px 0;
+	text-align: center;
+	@include sp {
+		padding: 60px $spPadding;
+	}
+	&_heading{
+		margin-bottom: 40px;
+		font-size: rem(60);
+		@include sp {
+			font-size: rem(30);
+		}
+	}
+	&_text{
+		margin-bottom: 40px;
 	}
 }
 
@@ -42,11 +69,6 @@
 		}
 	}
 }
-
-// /*---　3点リーダー（無ければ削除）　---*/
-// .text_overflow {
-// 	overflow: hidden;
-// }
 
 .pconly {
 	@include sp {

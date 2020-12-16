@@ -1,13 +1,18 @@
 /*=== basic ===*/
+:root {
+	font-size: $baseFontSize;
+}
 
-*{
+* {
 	box-sizing: border-box;
 	word-break: break-word;
+	-webkit-appearance: none;
 }
+
 body {
 	margin: 0;
 	padding: 0;
-	font-size: $baseFontSize;
+	font-size: rem(16);
 	font-family: $gothic;
 	color: $textColor;
 	-webkit-font-smoothing: antialiased;
@@ -15,62 +20,105 @@ body {
 		font-size: $spBaseFontSize;
 	}
 }
+
 a {
 	color: $linkColor;
 	@extend %lineHeight;
 	text-decoration: none;
 }
+
 p {
 	margin-bottom: $textBottom;
 	@extend %lineHeight;
 	@include sp {
 		margin-bottom: $spTextBottom;
 	}
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
+
 h1 {
 	@extend %headingLineHeight;
-	margin-bottom: $textBottom;
+	font-size: rem(24);
+	@include sp {
+		font-size: rem(22);
+	}
 }
+
 h2 {
 	@extend %headingLineHeight;
+	font-size: rem(22);
+	margin-bottom: 10px;
+	@include sp {
+		font-size: rem(20);
+		margin-bottom: 10px;
+	}
 }
+
 h3 {
 	@extend %headingLineHeight;
+	font-size: rem(20);
+	margin-bottom: 10px;
+	@include sp {
+		font-size: rem(18);
+		margin-bottom: 10px;
+	}
 }
+
 h4 {
 	@extend %headingLineHeight;
+	font-size: rem(18);
+	margin-bottom: 10px;
+	@include sp {
+		font-size: rem(16);
+		margin-bottom: 10px;
+	}
 }
+
 h5 {
 	@extend %headingLineHeight;
+	font-size: rem(16);
+	margin-bottom: 10px;
+	@include sp {
+		font-size: rem(14);
+		margin-bottom: 10px;
+	}
 }
-th {
-	@extend %lineHeight;
-}
-td {
-	@extend %lineHeight;
-}
-dt {
-	@extend %lineHeight;
-}
+
+li,
+th,
+td,
+dd,
 dl {
 	@extend %lineHeight;
 }
-dl,ul,ol {
+
+table, dl, ul, ol {
 	margin-bottom: $textBottom;
-	padding: 0;
 	@include sp {
 		margin-bottom: $spTextBottom;
 	}
 }
-li {
-	@extend %lineHeight;
-}
+
 em {
 	font-style: italic;
 }
+
 img {
 	@include sp {
 		max-width: 100%;
 		height: auto;
 	}
+}
+
+input {
+	@include sp {
+		font-size: 16px;
+	}
+}
+
+input[type="submit"] {
+   -webkit-appearance: none;
+   border-radius: 0;
 }

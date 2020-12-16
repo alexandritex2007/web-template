@@ -1,68 +1,21 @@
 .list {
+	// listDisc
 	&_disc {
-		margin-left: 10px;
-		& > li{
-			margin-bottom: 5px;
-			position: relative;
-			padding-left: 14px;
-			&:before{
-				content: "";
-				display: block;
-				width: 3px;
-				height: 3px;
-				background: $textColor;
-				border-radius: 50%;
-				position: absolute;
-				top: 13px;
-				left: 0;
-				@include sp {
-					top: 10px;
-				}
-			}
-			&:last-child{
-				margin-bottom: 0;
-			}
+		@include listDisc($color: $siteColor);
+		@include sp {
+			@include listDisc($posTop: 10px, $color: $siteColor);
 		}
 	}
 
-
+	// listCicle
 	&_circle {
-		margin-left: 10px;
-		& > li{
-			margin-bottom: 5px;
-			position: relative;
-			padding-left: 14px;
-			&:before{
-				content: "";
-				display: block;
-				width: 4px;
-				height: 4px;
-				background: #fff;
-				border-radius: 50%;
-				border: #333 2px solid;
-				position: absolute;
-				top: 10px;
-				left: 0;
-				@include sp {
-					top: 8px;
-				}
-			}
-			&:last-child{
-				margin-bottom: 0;
-			}
-		}
+		@include listCicle($siteColor);
 	}
 
-
+	// listNumber
 	&_number {
-		& > li{
-			margin-bottom: 5px;
-			position: relative;
-			margin-left: 20px;
-			list-style: decimal;
-			&:last-child{
-				margin-bottom: 0;
-			}
+		& li{
+			@include listNumber;
 		}
 	}
 }
