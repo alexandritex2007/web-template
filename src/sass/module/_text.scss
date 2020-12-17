@@ -1,63 +1,59 @@
 /*===　text　===*/
 .text {
 	&_small {
-		font-size: $baseFontSize - 2;
+		font-size: rem(14);
 		@include sp {
-			font-size: $spBaseFontSize - 2;
+			font-size: rem(12);
 		}
 	}
 	&_big {
-		font-size: $baseFontSize + 2;
+		font-size: rem(18);
 		@include sp {
-			font-size: $spBaseFontSize + 2;
+			font-size: rem(16);
 		}
 	}
 }
 
 /*===　heading　===*/
 .heading {
-	&01 {
-		font-size: $baseFontSize + 8;
-		margin-bottom: $textBottom * 0.5;
-		@include sp {
-			font-size: $spBaseFontSize + 8;
-		}
-	}
+	@at-root .single h2,
 	&02 {
-		font-size: $baseFontSize + 6;
-		margin-bottom: $textBottom * 0.5;
+		@extend %headingLineHeight;
+		font-size: rem(22);
+		margin-bottom: 10px;
 		@include sp {
-			font-size: $spBaseFontSize + 6;
-			margin-bottom: $spTextBottom * 0.5;
+			font-size: rem(20);
+			margin-bottom: 10px;
 		}
 	}
+	@at-root .single h3,
 	&03 {
-		font-size: $baseFontSize + 4;
-		margin-bottom: $textBottom * 0.5;
+		@extend %headingLineHeight;
+		font-size: rem(20);
+		margin-bottom: 10px;
 		@include sp {
-			font-size: $spBaseFontSize + 4;
-			margin-bottom: $spTextBottom * 0.5;
+			font-size: rem(18);
+			margin-bottom: 10px;
 		}
 	}
-	&04 {
-		font-size: $baseFontSize + 2;
-		margin-bottom: $textBottom * 0.5;
+	@at-root .single h4,
+	&04{
+		@extend %headingLineHeight;
+		font-size: rem(18);
+		margin-bottom: 10px;
 		@include sp {
-			font-size: $spBaseFontSize + 2;
-			margin-bottom: $spTextBottom * 0.5;
+			font-size: rem(16);
+			margin-bottom: 10px;
 		}
 	}
-	&05 {
-		font-size: $baseFontSize + 0;
-		margin-bottom: $textBottom * 0.5;
-		@include sp {
-			font-size: $spBaseFontSize + 0;
-			margin-bottom: $spTextBottom * 0.5;
-		}
+	&_20 {
+
 	}
-	&404 {
-		font-size: 32px;
-		color: $siteColor;
+	&_30 {
+
+	}
+	&_40 {
+
 	}
 }
 

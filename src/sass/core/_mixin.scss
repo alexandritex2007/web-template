@@ -93,69 +93,6 @@
     border-radius: $radius;
 }
 
-// listDisc
-@mixin listDisc($size: 3px, $posTop: 13px, $color: $textColor) {
-    margin-left: 10px;
-    & li{
-        margin-bottom: 5px;
-        position: relative;
-        padding-left: 14px;
-        &:before{
-            content: "";
-            display: block;
-            width: $size;
-            height: $size;
-            background-color: $color;
-            border-radius: 50%;
-            position: absolute;
-            top: $posTop;
-            left: 0;
-        }
-        &:last-child{
-            margin-bottom: 0;
-        }
-    }
-}
-
-// listCicle
-@mixin listCicle($color: #333) {
-    margin-left: 10px;
-    & > li{
-        margin-bottom: 5px;
-        position: relative;
-        padding-left: 14px;
-        &:before{
-            content: "";
-            display: block;
-            width: 4px;
-            height: 4px;
-            background: #fff;
-            border-radius: 50%;
-            border: $color 2px solid;
-            position: absolute;
-            top: 10px;
-            left: 0;
-            @include sp {
-                top: 8px;
-            }
-        }
-        &:last-child{
-            margin-bottom: 0;
-        }
-    }
-}
-
-// listNumber
-@mixin listNumber {
-    margin-bottom: 5px;
-    position: relative;
-    margin-left: 20px;
-    list-style: decimal;
-    &:last-child{
-        margin-bottom: 0;
-    }
-}
-
 // media querys
 @mixin sp {
     @media screen and (max-width: $sp) {

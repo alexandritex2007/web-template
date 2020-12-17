@@ -18,12 +18,12 @@ $sprite-sprite-sp01-width: 159px;
 $sprite-sprite-sp01-height: 166px;
 $sprite-sprite-sp01-total-width: 159px;
 $sprite-sprite-sp01-total-height: 166px;
-$sprite-sprite-sp01-image: '/wp-content/themes/hoge/assets/images/sprite_sp.png';
-$sprite-sprite-sp01: (0px, 0px, 0px, 0px, 159px, 166px, 159px, 166px, '/wp-content/themes/hoge/assets/images/sprite_sp.png', 'sprite-sprite_sp01', );
+$sprite-sprite-sp01-image: '/wp-content/themes/test/assets/images/sprite_sp.png';
+$sprite-sprite-sp01: (0px, 0px, 0px, 0px, 159px, 166px, 159px, 166px, '/wp-content/themes/test/assets/images/sprite_sp.png', 'sprite-sprite_sp01', );
 $spritesheet-width: 159px;
 $spritesheet-height: 166px;
-$spritesheet-image: '/wp-content/themes/hoge/assets/images/sprite_sp.png';
+$spritesheet-image: '/wp-content/themes/test/assets/images/sprite_sp.png';
 $spritesheet-sprites: ($sprite-sprite-sp01, );
-$spritesheet: (159px, 166px, '/wp-content/themes/hoge/assets/images/sprite_sp.png', $spritesheet-sprites, );
+$spritesheet: (159px, 166px, '/wp-content/themes/test/assets/images/sprite_sp.png', $spritesheet-sprites, );
 
 
