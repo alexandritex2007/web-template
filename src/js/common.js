@@ -10,7 +10,7 @@ $(function(){
 /* ----- スクロールイベント ----- */
 $(window).scroll(function(){
   // スクロールでイベント発火
-  scrollEvent();
+  // scrollEvent();
 });
 
 /* ----- PC・SP切り替え ----- */
