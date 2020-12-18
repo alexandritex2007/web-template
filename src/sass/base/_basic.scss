@@ -17,7 +17,7 @@ body {
 	color: $textColor;
 	-webkit-font-smoothing: antialiased;
 	@include sp {
-		font-size: $spBaseFontSize;
+		font-size: rem(14);
 	}
 }
 

@@ -9,7 +9,8 @@
         padding-top: $blockPadding;
         padding-bottom: $blockPadding;
         @include sp {
-            @include spPadding;
+            padding-top: $spBlockPadding;
+            padding-bottom: $spBlockPadding;
         }
         &_top {
             padding-top: $blockPadding;
