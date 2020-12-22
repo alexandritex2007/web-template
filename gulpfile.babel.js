@@ -35,7 +35,7 @@ gulp.task('ect', (done) => {
     .pipe(gulp.dest(DIST))
     .pipe(browser.reload({stream:true}));
   done();
-    
+
 });
 
 // sass
@@ -92,7 +92,7 @@ gulp.task('sprite', (done) => {
     cssName: '_sprite.scss',
 
     padding: 20,
-    imgPath: '../../assets/images/sprite.png',
+    imgPath: '../assets/images/sprite.png',
     cssFormat: 'scss',
     algorithm:'top-down',
     cssOpts: {
@@ -114,7 +114,7 @@ gulp.task('sprite_sp', (done) => {
       imgName: 'sprite_sp.png',
       cssName: '_sprite_sp.scss',
       padding: 20,
-      imgPath: '../../assets/images/sprite_sp.png',
+      imgPath: '../assets/images/sprite_sp.png',
       cssFormat: 'scss',
       algorithm:'top-down',
       cssOpts: {
