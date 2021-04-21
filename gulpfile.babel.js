@@ -139,7 +139,7 @@ gulp.task('sprite_sp', (done) => {
 // Img Convert
 gulp.task('imagemin', (done) => {
   gulp.src(SRC + '/img/assets/**/*.{png,jpg,jpeg}')
-    .pipe(changed('themes/'+IDENTIFY+'/assets/images/'))
+    .pipe(changed(DIST + '/assets/images/'))
     .pipe(
       imagemin([
         pngquant({
@@ -155,7 +155,7 @@ gulp.task('imagemin', (done) => {
     .pipe(gulp.dest(DIST + '/assets/images/'))
 
     gulp.src(SRC + '/img/content/**/*.{png,jpg,jpeg}')
-    .pipe(changed('themes/'+IDENTIFY+'/assets/images/'))
+    .pipe(changed(DIST + '/content/images/'))
     .pipe(
       imagemin([
         pngquant({
