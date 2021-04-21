@@ -1,16 +1,19 @@
 const gulp = require('gulp'),
   ect = require('gulp-ect'),
   sass = require('gulp-sass'),
+  notify = require('gulp-notify'),
   babel = require('gulp-babel'),
   webpackStream = require('webpack-stream'),
   webpack = require('webpack'),
   sourcemaps = require('gulp-sourcemaps'),
   autoprefixer = require('gulp-autoprefixer'),
   bulkSass = require('gulp-sass-bulk-import'),
-  cssmin = require('gulp-cssmin'),
   rename = require('gulp-rename'),
   frontnote = require('gulp-frontnote'),
-  tinyping = require('gulp-tinypng-compress'),
+  imagemin = require('gulp-imagemin'),
+  mozjpeg = require('imagemin-mozjpeg'),
+  pngquant = require('imagemin-pngquant'),
+  changed = require('gulp-changed'),
   spritesmith = require('gulp.spritesmith'),
   svgstore = require('gulp-svgstore'),
   cheerio = require('gulp-cheerio'),
@@ -21,7 +24,7 @@ const gulp = require('gulp'),
 
 
 const SRC = 'src',
-  DIST = 'dist';
+      DIST = 'dist';
 const gulpConfPass = require('./gulpconfig.json');
 const ectConfig = require('./src/include/_const.js');
 
@@ -38,10 +41,16 @@ gulp.task('ect', (done) => {
 
 });
 
-// sass
+// Sass
 gulp.task('sass', (done) => {
   gulp.src(['src/sass/**/*.scss','!src/sass/**/_*.scss'])
-    .pipe(plumber())
+    .pipe(plumber({
+      errorHandler: notify.onError("Error: <%= error.message %>")
+    }))
+    .pipe(notify({
+      title: 'Sassをコンパイルしました。',
+      message: new Date().toLocaleString("ja"),
+    }))
     .pipe(frontnote({
       out: 'dist/guide/',
       css: '../css/common.css',
@@ -50,9 +59,12 @@ gulp.task('sass', (done) => {
     .pipe(sourcemaps.init())
     .pipe(bulkSass())
     .pipe(sass({outputStyle: 'compressed'})) //nested,compact,expanded,compressed
+    .pipe(autoprefixer({
+      cascade: false
+    }))
     .pipe(sourcemaps.write('../maps/'))
     .pipe(gulp.dest(DIST + '/css'))
-    .pipe(browser.reload({stream:true}));
+    .pipe(browser.reload({stream: true}))
   done();
 });
 
@@ -66,22 +78,17 @@ gulp.task('server', (done) => {
   done();
 });
 
-//CSSmin
-gulp.task('cssmin', (done) => {
-  gulp.src(SRC + '/css/**/*.css')
-    .pipe(cssmin())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(DIST + '/assets/css/min'));
-  done();
-});
-
 // webpack
 const webpackConfig = require('./webpack.config');
 
 gulp.task('webpack', () => {
   return webpackStream(webpackConfig, webpack)
-    .pipe(plumber())
-    .pipe(gulp.dest(DIST + '/js/'));
+    .pipe(notify())
+    .pipe(plumber({
+      errorHandler: notify.onError("Error: <%= error.message %>")
+    }))
+    .pipe(gulp.dest(DIST + '/js/'))
+    .pipe(browser.reload({stream: true}))
 });
 
 //sprite-pc
@@ -129,15 +136,39 @@ gulp.task('sprite_sp', (done) => {
   done();
 });
 
-//img_min
-gulp.task('tinypng', (done) => {
+// Img Convert
+gulp.task('imagemin', (done) => {
   gulp.src(SRC + '/img/assets/**/*.{png,jpg,jpeg}')
-    .pipe(tinyping({key: gulpConfPass.tinypngAPIKey}))
-    .pipe(gulp.dest(DIST + '/assets/images/'));
+    .pipe(changed('themes/'+IDENTIFY+'/assets/images/'))
+    .pipe(
+      imagemin([
+        pngquant({
+          quality: [.60, .70], // 画質
+          speed: 1 // スピード
+        }),
+        mozjpeg({ quality: 65 }), // 画質
+        imagemin.svgo(),
+        imagemin.optipng(),
+        imagemin.gifsicle({ optimizationLevel: 3 }) // 圧縮率
+      ])
+    )
+    .pipe(gulp.dest(DIST + '/assets/images/'))
 
-  gulp.src(SRC + '/img/content/**/*.{png,jpg,jpeg}')
-    .pipe(tinyping({key: gulpConfPass.tinypngAPIKey}))
-    .pipe(gulp.dest(DIST + '/content/images/'));
+    gulp.src(SRC + '/img/content/**/*.{png,jpg,jpeg}')
+    .pipe(changed('themes/'+IDENTIFY+'/assets/images/'))
+    .pipe(
+      imagemin([
+        pngquant({
+          quality: [.60, .70], // 画質
+          speed: 1 // スピード
+        }),
+        mozjpeg({ quality: 65 }), // 画質
+        imagemin.svgo(),
+        imagemin.optipng(),
+        imagemin.gifsicle({ optimizationLevel: 3 }) // 圧縮率
+      ])
+    )
+    .pipe(gulp.dest(DIST + '/content/images/'))
   done();
 });
 
@@ -173,15 +204,14 @@ gulp.task('svgstore', () => {
 // watch
 gulp.task('watch', () => {
   gulp.watch(SRC + '/sass/**/*.scss',gulp.parallel('sass'));
-  gulp.watch(SRC + '/css/**/*.css',gulp.parallel('cssmin'));
   gulp.watch(SRC + '/js/**/*.js', gulp.parallel('webpack'));
   gulp.watch(SRC + '/sprite/*.png',gulp.parallel('sprite'));
   gulp.watch(SRC + '/sprite_sp/*.png',gulp.parallel('sprite_sp'));
   gulp.watch(SRC + '/svg/*.svg',gulp.parallel('svgstore'));
-  gulp.watch(SRC + '/img/**/*.{png,jpg,jpeg}',gulp.parallel('tinypng'));
+  gulp.watch(SRC + '/img/**/*.{png,jpg,jpeg}',gulp.parallel('imagemin'));
   gulp.watch(SRC + '/ect/**/*.ect',gulp.parallel('ect'));
 });
 
-gulp.task('all',gulp.series(gulp.parallel('webpack','sprite','sprite_sp','svgstore','tinypng','sass','ect')));
+gulp.task('all',gulp.series(gulp.parallel('webpack','sprite','sprite_sp','svgstore','imagemin','sass','ect')));
 gulp.task("default",gulp.series(gulp.parallel("server", "watch")));
 
