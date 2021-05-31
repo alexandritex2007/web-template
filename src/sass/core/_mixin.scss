@@ -3,7 +3,35 @@
     @return $pixels / $baseFontSize * 1rem;
 }
 
-// heading
+// media
+@mixin col($mediaCol: 3, $meidaMarginRight: 30, $mediaMarginBotom: 30, $mediaMarginBotomSp: 30) {
+    display: flex;
+    flex-wrap: wrap;
+    &_item {
+        width: calc((100% / #{$mediaCol}) - #{$meidaMarginRight * (($mediaCol - 1) / $mediaCol)}px);
+        margin-right: #{$meidaMarginRight}px;
+        margin-bottom: #{$mediaMarginBotom}px;
+        @include sp {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: #{$mediaMarginBotomSp}px;
+        }
+        &:nth-of-type(#{$mediaCol}) {
+            margin-right: 0;
+        }
+        &:nth-last-of-type(-n+#{$mediaCol}) {
+            margin-bottom: 0;
+            @include sp {
+                margin-bottom: #{$mediaMarginBotomSp}px;
+            }
+        }
+        &:last-of-type {
+            @include sp {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
 
 
 // transition
@@ -101,6 +129,11 @@
 }
 @mixin tablet {
     @media screen and (min-width:$sp + 1) and ( max-width:$tablet) {
+        @content;
+    }
+}
+@mixin pc {
+    @media screen and (min-width:$sp + 1) {
         @content;
     }
 }

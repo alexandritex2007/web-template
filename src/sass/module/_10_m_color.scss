@@ -1,0 +1,32 @@
+// title：カラー用モジュール
+// description：テキストのカラーや背景カラーなど
+
+/*===　color　===*/
+.color {
+    &_site {
+        color: $siteColor;
+    }
+    &_accent {
+        color: $accentColor;
+    }
+    &_text {
+        color: $textColor;
+    }
+    &_attention {
+        color: $attentionColor;
+    }
+    &_white {
+        color: white;
+    }
+    &_bg {
+        &_site {
+            background-color: $siteColor;
+        }
+        &_accent {
+            background-color: $accentColor;
+        }
+        &_gray {
+            background-color: #eee;
+        }
+    }
+}

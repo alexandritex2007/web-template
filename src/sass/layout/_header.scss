@@ -1,4 +1,83 @@
 /*=== l-header ===*/
 .l-header {
 
+  
+  /*---　gnav　---*/
+  &_gnav{
+    
+  }
+
+  /*---　hamburgerMenu　---*/
+  // $changeColor : $barColor;
+  $barColor : $siteColor;
+  $barwidth : 64px;
+  $barHeight : 3px;
+  $boxHeight : 40px;
+  $delayTime : .4s;
+  $snappy : cubic-bezier(0.694,  0.048, 0.335, 1);
+
+  &_hamburger{
+    position: relative;
+    transition: transform 0.3s $snappy;
+    width: $barwidth;
+    height: $boxHeight;
+    &_wrap{
+      position: fixed;
+      top: 50px;
+      right: 50px;
+      z-index: 100;
+      cursor: pointer; // スマホのみの場合不要
+    }
+    span{
+      display: block;
+      margin-top: calc((#{$boxHeight} - (#{$barHeight} * 3)) / 2);
+      width: 100%;
+      height: $barHeight;
+      background-color: $barColor;
+      &:first-child {
+        margin-top: 0;
+        transform: scaleX(1);
+        transition: transform 0.2s $snappy;
+        transition-delay: $delayTime;
+      }
+      &:nth-child(3) {
+        transition: width 0.2s $snappy;
+        transition-delay: $delayTime;
+      }
+      &.hidden-bar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: 0;
+        width: $barHeight;
+        height: 0;
+        transform: translate(-50%, -50%);
+        transition: height $delayTime $snappy;
+        z-index: 10;
+      }
+    }
+    &.is-menuopen {
+      transform: rotate(45deg);
+      transition-delay: $delayTime;
+      span {
+        // background-color: $changeColor;
+        &:first-child {
+          transform: scaleX(0);
+          transition: transform 0.2s $snappy;
+        }
+        &:nth-child(3) {
+          width: 0;
+          transition: width 0.2s $snappy;
+        }
+        &.hidden-bar {
+          height: $barwidth;
+          transition: height 0.2s $snappy;
+          transition-delay: 0.3s;
+        }
+      }
+    }
+  }
 }
+
+/*--- search ---*/
+

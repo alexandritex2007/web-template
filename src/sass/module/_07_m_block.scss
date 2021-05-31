@@ -1,0 +1,82 @@
+// title：ブロック用モジュール
+// description：リンクで飛ばさないブロック
+
+/*===　block　===*/
+.block {
+	&01 {
+		border: solid 1px $siteColor;
+		padding: 20px;
+		@include sp {
+			padding: 16px;
+		}
+	}
+	&02 {
+		background-color: $lightGrayColor;
+		padding: 20px;
+		@include sp {
+			padding: 16px;
+		}
+	}
+	&03 {
+		background-color: $darkGrayColor;
+		color: #fff;
+		font-weight: 600;
+		padding: 20px;
+		@include sp {
+			padding: 16px;
+		}
+	}
+	&04 {
+		&_item {
+			display: flex;
+			@include sp {
+				flex-direction: column;
+			}
+		}
+		&_img {
+			width: 300px;
+			@include sp {
+				width: 100%;
+			}
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		&_content {
+			padding-left: 20px;
+			@include sp {
+				padding-left: 0;
+				padding-top: 20px;
+			}
+		}
+		&_title {
+			font-weight: 600;
+			font-size: rem(20);
+			margin-bottom: 10px;
+			@include sp {
+				font-size: rem(18);
+			}
+		}
+		&_text {
+			line-height: 1.6;
+		}
+		&_reverse {
+			flex-direction: row-reverse;
+			@include sp {
+				flex-direction: column;
+			}
+			.block04 {
+				&_content {
+					flex: 1;
+					padding-left: 0;
+					padding-right: 20px;
+					@include sp {
+						padding-right: 0;
+					}
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,53 @@
+// title：コンテンツエリアモジュール
+// description：コンテンツの横幅や余白設定
+
+/*===　content　===*/
+.content {
+    // コンテンツ横幅
+    &_xl,
+    &_l,
+    &_m,
+    &_s,
+    &_xs {
+        width: 100%;
+        margin: 0 auto;
+        @include sp {
+            max-width: auto;
+            @include spPadding;
+            .content_xl,
+            .content_l,
+            .content_m,
+            .content_s,
+            .content_xs {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+    &_xl { max-width: #{$contentXL}px; }
+    &_l { max-width: #{$contentL}px; }
+    &_m { max-width: #{$contentM}px; }
+    &_s { max-width: #{$contentS}px; }
+    &_xs { max-width: #{$contentXS}px; }
+    // セクション上下余白
+    &_block {
+        padding-top: $blockPadding;
+        padding-bottom: $blockPadding;
+        @include sp {
+            padding-top: $spBlockPadding;
+            padding-bottom: $spBlockPadding;
+        }
+        &_top {
+            padding-top: $blockPadding;
+            @include sp {
+                padding-top: $spBlockPadding;
+            }
+        }
+        &_bottom {
+            padding-bottom: $blockPadding;
+            @include sp {
+                padding-bottom: $spBlockPadding;
+            }
+        }
+    }
+}

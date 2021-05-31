@@ -30,7 +30,7 @@ const ectConfig = require('./src/include/_const.js');
 
 // ect
 gulp.task('ect', (done) => {
-  gulp.src(['src/ect/**/*.ect','!src/ect/**/_*.ect'])
+  gulp.src('src/ect/**/*.ect')
     .pipe(plumber())
     .pipe(ect({data(file, cb) {
         cb(ectConfig);
@@ -43,18 +43,14 @@ gulp.task('ect', (done) => {
 
 // Sass
 gulp.task('sass', (done) => {
-  gulp.src(['src/sass/**/*.scss','!src/sass/**/_*.scss'])
-    .pipe(plumber({
-      errorHandler: notify.onError("Error: <%= error.message %>")
-    }))
-    .pipe(notify({
-      title: 'Sassをコンパイルしました。',
-      message: new Date().toLocaleString("ja"),
-    }))
+  gulp.src('src/sass/**/*.scss')
     .pipe(frontnote({
       out: 'dist/guide/',
       css: '../css/common.css',
       title: 'Style Guide'
+    }))
+    .pipe(plumber({
+      errorHandler: notify.onError("Error: <%= error.message %>")
     }))
     .pipe(sourcemaps.init())
     .pipe(bulkSass())
@@ -64,6 +60,10 @@ gulp.task('sass', (done) => {
     }))
     .pipe(sourcemaps.write('../maps/'))
     .pipe(gulp.dest(DIST + '/css'))
+    .pipe(notify({
+      title: 'Sassをコンパイルしました。',
+      message: new Date().toLocaleString("ja"),
+    }))
     .pipe(browser.reload({stream: true}))
   done();
 });
@@ -83,12 +83,15 @@ const webpackConfig = require('./webpack.config');
 
 gulp.task('webpack', () => {
   return webpackStream(webpackConfig, webpack)
-    .pipe(notify())
-    .pipe(plumber({
-      errorHandler: notify.onError("Error: <%= error.message %>")
-    }))
-    .pipe(gulp.dest(DIST + '/js/'))
-    .pipe(browser.reload({stream: true}))
+  .pipe(notify({
+    title: 'jsをコンパイルしました。',
+    message: new Date().toLocaleString("ja"),
+  }))
+  .pipe(plumber({
+    errorHandler: notify.onError("Error: <%= error.message %>")
+  }))
+  .pipe(gulp.dest(DIST + '/js/'))
+  .pipe(browser.reload({stream: true}))
 });
 
 //sprite-pc

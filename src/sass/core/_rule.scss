@@ -1,3 +1,12 @@
+
+// ************************************************************
+//                    content_width
+// ************************************************************
+$contentXL: 1280;
+$contentL: 1040;
+$contentM: 960;
+$contentS: 750;
+$contentXS: 640;
 // ************************************************************
 //                      breakpoint
 // ************************************************************
@@ -6,11 +15,11 @@ $tablet: 1024px;
 // ************************************************************
 //                      URL・pass
 // ************************************************************
-$rootPath: '../';
+$rootPath: '../../';
 // flame-pass
-$assetsImgPath: $rootPath + 'assets/images/';
+$assetsImgPath: $rootPath + '/assets/images/';
 // content-pass
-$contentImgPath: $rootPath + 'content/images/';
+$contentImgPath: $rootPath + '/content/images/';
 // ************************************************************
 //                      font
 // ************************************************************
@@ -30,9 +39,9 @@ $minchoBold: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "Ｍ�
 //                      color
 // ************************************************************
 // site-color
-$siteColor: #00afd6;
+$siteColor: #323c99;
 // accent-color
-$accentColor: #dbf4f9;
+$accentColor: #e6e7f3;
 // attention-color
 $attentionColor: #e03535;
 // warning-color
@@ -41,6 +50,10 @@ $warningColor: #f9a712;
 $textColor: #323232;
 // link-font-color
 $linkColor: #036EB8;
+// lightgray-color
+$lightGrayColor: #eee;
+// darkgray-color
+$darkGrayColor: #9e9e9e;
 // ************************************************************
 //                      margin・padding
 // ************************************************************

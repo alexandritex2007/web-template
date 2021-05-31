@@ -1,0 +1,75 @@
+/*===　text　===*/
+.text {
+	&_small {
+		font-size: rem(14);
+		@include sp {
+			font-size: rem(12);
+		}
+	}
+	&_big {
+		font-size: rem(18);
+		@include sp {
+			font-size: rem(16);
+		}
+	}
+	&_bold {
+		font-weight: 600;
+	}
+	&_indent {
+		text-indent: 1em;
+	}
+	&_center {
+		text-align: center;
+		&_pc {
+			@include pc {
+				text-align: center;
+			}
+		}
+		&_sp {
+			@include sp {
+				text-align: center;
+			}
+		}
+	}
+	&_left {
+		text-align: left;
+		&_pc {
+			@include pc {
+				text-align: left;
+			}
+		}
+		&_sp {
+			@include sp {
+				text-align: left;
+			}
+		}
+	}
+	&_right {
+		text-align: right;
+		&_pc {
+			@include pc {
+				text-align: right;
+			}
+		}
+		&_sp {
+			@include sp {
+				text-align: right;
+			}
+		}
+	}
+	&_icon {
+		&_link {
+			&:after {
+				@include sprite($sprite-sprite100);
+				@extend %icon_position;
+			}
+		}
+		&_pdf {
+			&:after {
+				@include sprite($sprite-sprite101);
+				@extend %icon_position;
+			}
+		}
+	}
+}
+

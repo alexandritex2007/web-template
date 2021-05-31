@@ -1,7 +1,8 @@
+//   ------------------------------------------- テーブルボーダーなし -------------------------------------------------------------
 /*
 #styleguide
 
-ボーダーなし
+テーブルボーダーなし
 ```
 <table class="table">
 	<thead>
@@ -34,10 +35,11 @@
 ```
 */
 
+//   ------------------------------------------- テーブルボーダーあり -------------------------------------------------------------
 /*
 #styleguide
 
-ボーダーあり
+テーブルボーダーあり
 ```
 <table class="table table_border">
 	<thead>
@@ -70,12 +72,13 @@
 ```
 */
 
+//   ------------------------------------------- テーブル装飾１ -------------------------------------------------------------
 /*
 #styleguide
 
-レイアウト１
+テーブル装飾１
 ```
-<table class="table table_layout01">
+<table class="table table_skin01">
 	<thead>
 		<tr>
 			<th>table</th>
@@ -106,12 +109,13 @@
 ```
 */
 
+//   ------------------------------------------- テーブル配置センター -------------------------------------------------------------
 /*
 #styleguide
 
-テーブル位置センター
+テーブル配置センター
 ```
-<table class="table table_layout01 table_center">
+<table class="table table_skin01 table_center">
 	<thead>
 		<tr>
 			<th>table</th>
@@ -142,12 +146,14 @@
 ```
 */
 
+//   ------------------------------------------- テーブルストライプ -------------------------------------------------------------
 /*
 #styleguide
 
-ストライプ
+テーブルストライプ
+@アーカイブ
 ```
-<table class="table table_border table_stripe">
+<table class="table table_border table_skin01 table_stripe">
 	<thead>
 		<tr>
 			<th>table_stripe</th>
@@ -183,13 +189,14 @@
 ```
 */
 
+//   ------------------------------------------- テーブルレスポンシブ（スマホ時） -------------------------------------------------------------
 /*
 #styleguide
 
-レスポンシブ
+テーブルレスポンシブ（スマホ時）
 ```
 <div class="table_responsive">
-	<table class="table">
+	<table class="table table_border table_skin01">
 		<thead>
 			<tr>
 				<th>table_stripe</th>
@@ -201,7 +208,8 @@
 		</thead>
 		<tbody>
 			<tr>
-				<th>table_stripe</th>
+				<td>table_stripe</td>
+				<td>table_stripe</td>
 				<td>table_stripe</td>
 				<td>table_stripe</td>
 				<td>table_stripe</td>

@@ -1,6 +1,10 @@
+// title：リスト用モジュール
+// description：ul、olの装飾
+
+/*===　list　===*/
 .list {
 	// listDisc
-	@at-root .single ul,
+	@at-root .single .l-content ul,
 	&_disc {
 		margin-left: 10px;
 		& li{
@@ -15,7 +19,7 @@
 				background-color: $textColor;
 				border-radius: 50%;
 				position: absolute;
-				top: 13px;
+				top: 10px;
 				left: 0;
 			}
 			&:last-child{
@@ -40,7 +44,7 @@
 				border-radius: 50%;
 				border: #333 2px solid;
 				position: absolute;
-				top: 10px;
+				top: 8px;
 				left: 0;
 				@include sp {
 					top: 8px;
@@ -52,7 +56,8 @@
 		}
 	}
 
-	@at-root .single ol,
+	// listNumber
+	@at-root .single .l-content ol,
 	&_number {
 		& li{
 			margin-bottom: 5px;

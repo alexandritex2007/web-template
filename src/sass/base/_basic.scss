@@ -101,8 +101,18 @@ table, dl, ul, ol {
 	}
 }
 
-em {
+i {
 	font-style: italic;
+}
+
+body sup {
+	vertical-align: super;
+    font-size: smaller;
+}
+
+body sub {
+	vertical-align: sub;
+    font-size: smaller;
 }
 
 img {
@@ -121,4 +131,123 @@ input {
 input[type="submit"] {
    -webkit-appearance: none;
    border-radius: 0;
+}
+
+input[type="text"] {
+	@extend %field;
+}
+
+input[type="email"] {
+	@extend %field;
+}
+
+input[type="tel"] {
+	@extend %field;
+}
+
+[type="submit"] {
+    outline: none;
+}
+
+body textarea {
+	@extend %field;
+}
+
+input[type="radio"]{
+	display: none;
+	& + span {
+		padding-left: 20px;
+		margin-right: 20px;
+		position:relative;
+		&::before {
+			content: "";
+			display: block;
+			width: 15px;
+			height: 15px;
+			border: 1px solid #999;
+			border-radius: 50%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	&:checked + span {
+		&::after {
+			content: "";
+			display: block;
+			width: 11px;
+			height: 11px;
+			background: $siteColor;
+			border-radius: 50%;
+			position: absolute;
+			top: 3px;
+			left: 3px;
+		}
+	}
+}
+
+input[type="checkbox"] {
+	display: none;
+	& + span {
+		padding-left: 20px;
+		position:relative;
+		margin-right: 20px;
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 15px;
+			height: 15px;
+			border: 1px solid #999;
+			border-radius: 4px;
+		}
+	}
+	&:checked + span {
+		&::after {
+			content: "";
+			display: block;
+			width: 7px;
+			height: 14px;
+			transform: rotate(40deg);
+			border-bottom: 3px solid $siteColor;
+			border-right: 3px solid $siteColor;
+			position: absolute;
+			top: -5px;
+			left: 5px;
+		}
+	}
+}
+
+body select {
+	@extend %field;
+    outline:none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    background: none transparent;
+    vertical-align: middle;
+    font-size: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+	appearance: none;
+	position: relative;
+	&:before {
+		content: '>';
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	& option {
+		background-color: #fff;
+		color: #333;
+	}
+	&::-ms-expand {
+		display: none;
+	}
+	&:-moz-focusring {
+		color: transparent;
+		text-shadow: 0 0 0 #828c9a;
+	}
 }

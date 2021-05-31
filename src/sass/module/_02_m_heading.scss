@@ -1,18 +1,5 @@
-/*===　text　===*/
-.text {
-	&_small {
-		font-size: rem(14);
-		@include sp {
-			font-size: rem(12);
-		}
-	}
-	&_big {
-		font-size: rem(18);
-		@include sp {
-			font-size: rem(16);
-		}
-	}
-}
+// title：見出しモジュール
+// description：hタグを装飾するためのモジュール
 
 /*===　heading　===*/
 .heading {
@@ -46,29 +33,13 @@
 			margin-bottom: 10px;
 		}
 	}
-	&_20 {
+	&20 {
 
 	}
-	&_30 {
+	&30 {
 
 	}
-	&_40 {
+	&40 {
 
-	}
-}
-
-/*===　link　===*/
-.icon {
-	&_link {
-		&:after {
-			@include sprite($sprite-sprite100);
-			@extend %icon_position;
-		}
-	}
-	&_pdf {
-		&:after {
-			@include sprite($sprite-sprite101);
-			@extend %icon_position;
-		}
 	}
 }

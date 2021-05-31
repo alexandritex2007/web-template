@@ -17,7 +17,7 @@ export default function() {
 }
 
 function moveGoTop(){
-  const x = $(".l-footer_bottom").offset().top - $(window).scrollTop();
+  const x = $(".l-footer").offset().top - $(window).scrollTop();
   if ( x <= $(window).height() ){
     $(".gotop").css( "position", "absolute" );
     $(".gotop").addClass("change");

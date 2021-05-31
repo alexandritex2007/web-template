@@ -1,0 +1,89 @@
+// title：フォーム用モジュール
+// description：バリデーションチェックなど
+
+/*===　form　===*/
+.form {
+    &_attention {
+        color: $attentionColor;
+        font-size: rem(14);
+        margin-left: 4px;
+    }
+    // フォームレイアウト
+    &_table {
+        th,
+        td {
+            padding: 10px;
+            @include sp {
+                display: block;
+                width: 100%;
+            }
+        }
+        th {
+            @include sp {
+                padding-bottom: 0;
+                text-align: left;
+            }
+        }
+    }
+    &_block {
+        &_item {
+            margin-bottom: 20px;
+        }
+        &_title {
+            margin-bottom: 0;
+        }
+    }
+    &_select {
+        position: relative;
+        select {
+            padding-right: 20px;
+        }
+        &:before {
+            display: inline-block;
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-top: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            position: absolute;
+            top: calc(50% - 2px);
+            right: 10px;
+            transform: translateY(-50%) rotate(130deg);
+        }
+    }
+}
+
+
+// バリデーション用スタイル
+.v- {
+	&wrap {
+		position: relative;
+	}
+	&alert {
+		min-width: 200px;
+		line-height: 1.8;
+		text-align: center;
+		background-color: #ccc;
+		padding: 6px 10px;
+		font-size: 12px;
+		white-space: nowrap;
+		border-radius: 2px;
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 8px 8px 0 8px;
+			border-color: #ccc transparent transparent transparent;
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}

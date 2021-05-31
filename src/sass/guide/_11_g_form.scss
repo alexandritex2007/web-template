@@ -1,0 +1,168 @@
+//   ------------------------------------------- フォーム -------------------------------------------------------------
+/*
+#styleguide
+
+フォームtable
+@アーカイブ
+```
+<div class="v-form">
+		<form action="/" method="post">
+			<table class="form_table v-top">
+				<tbody>
+					<tr>
+						<th>名前<span class="form_attention">*必須</span></th>
+						<td>
+							<div class="v-wrap">
+								<input type="text" name="name" class="v-required" size="60" value="">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>電話番号<span class="form_attention">*必須</span></th>
+						<td>
+							<div class="v-wrap">
+								<input type="tel" name="tel" class="v-tel v-required" size="60" value="">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th rowspan="2">メールアドレス<span class="form_attention">*必須</span></th>
+						<td>
+							<div class="v-wrap">
+								<input type="email" class="v-email v-required v-double_check01">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="mb0">確認のため2度入力してください</p>
+							<div class="v-wrap">
+								<input type="email" class="v-email v-required v-double_check02">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th rowspan="2">住所<span class="form_attention">*必須</span></th>
+						<td>
+							<p class="mb0">郵便番号</p>
+							<div class="v-wrap">
+								<input type="text" class="v-required v-zip">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="mb0">都道府県</p>
+							<div class="v-wrap">
+								<input type="text" class="v-required">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>選択</th>
+						<td>
+							<div class="v-wrap">
+								<label>
+									<input type="radio" name="radio">
+									<span>radio01</span>
+								</label>
+								<label>
+									<input type="radio" name="radio">
+									<span>radio02</span>
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>セレクト<span class="form_attention">*必須</span></th>
+						<td>
+							<div class="v-wrap">
+                                <div class="form_select">
+                                    <select name="select" class="v-required">
+                                        <option value="">選択してください</option>
+                                        <option value="select01">select01</option>
+                                        <option value="select02">select02</option>
+                                    </select>
+                                </div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>お問い合わせ内容<span class="form_attention">*必須</span></th>
+						<td>
+							<div class="v-wrap">
+								<textarea class="v-required" rows="5"></textarea>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="mb30 text_center">
+                <label>
+                    <input type="checkbox" class="v-required">
+                    <span><a href="">個人情報保護方針</a>に同意する<span class="form_attention">*必須</span></span>
+                </label>
+            </div>
+            <div class="btn_wrapper">
+                <input type="submit" value="内容を確認する" class="btn btn_skin01">
+            </div>
+		</form>
+</div>
+
+```
+*/
+
+/*
+#styleguide
+
+フォームtable
+@アーカイブ
+```
+<div class="v-form">
+    <form action="/" method="post">
+        <div class="v-top form_block">
+            <div class="form_block_item">
+                <p class="form_block_title">お名前<span class="form_attention">*必須</span></p>
+                <div class="v-wrap">
+                    <input type="text" name="name" class="v-required" size="60" value="">
+                </div>
+            </div>
+            <div class="form_block_item">
+                <p class="form_block_title">電話番号<span class="form_attention">*必須</span></p>
+                <div class="v-wrap">
+                    <input type="tel" name="tel" class="v-tel v-required" size="60" value="">
+                </div>
+            </div>
+            <div class="form_block_item">
+                <p class="form_block_title">メールアドレス<span class="form_attention">*必須</span></p>
+                <div class="v-wrap">
+                    <input type="email" name="email" class="v-email v-required v-double_check01" size="60" value="">
+                </div>
+            </div>
+            <div class="form_block_item">
+                <p class="form_block_title">メールアドレス再入力<span class="form_attention">*必須</span></p>
+                <div class="v-wrap">
+                    <input type="email" class="v-email v-required v-double_check02">
+                </div>
+            </div>
+            <div class="form_block_item">
+                <p class="form_block_title">お問い合わせ内容<span class="form_attention">*必須</span></p>
+                <div class="v-wrap">
+                    <textarea name="comment" cols="50" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="mb30 text_center">
+                <label>
+                    <input type="checkbox" class="v-required">
+                    <span><a href="">個人情報保護方針</a>に同意する<span class="form_attention">*必須</span></span>
+                </label>
+            </div>
+            <div class="btn_wrapper">
+                <input type="submit" value="内容を確認する" class="btn btn_skin01">
+            </div>
+        </div>
+	</form>
+</div>
+
+```
+*/
