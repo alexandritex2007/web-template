@@ -25,12 +25,19 @@ const gulp = require('gulp'),
 
 const SRC = 'src',
       DIST = 'dist';
-const gulpConfPass = require('./gulpconfig.json');
 const ectConfig = require('./src/include/_const.js');
+
+// file copy
+gulp.task('copy', function() {
+  return gulp.src(SRC + '/static/**/*.*', {
+    base: 'src/static'
+  })
+  .pipe(gulp.dest(DIST));
+});
 
 // ect
 gulp.task('ect', (done) => {
-  gulp.src('src/ect/**/*.ect')
+  gulp.src([SRC + '/ect/**/*.ect', '!src/ect/**/_*.ect'])
     .pipe(plumber())
     .pipe(ect({data(file, cb) {
         cb(ectConfig);
@@ -43,7 +50,7 @@ gulp.task('ect', (done) => {
 
 // Sass
 gulp.task('sass', (done) => {
-  gulp.src('src/sass/**/*.scss')
+  gulp.src(SRC + '/sass/**/*.scss')
     .pipe(frontnote({
       out: 'dist/guide/',
       css: '../css/common.css',
@@ -207,6 +214,7 @@ gulp.task('svgstore', () => {
 // watch
 gulp.task('watch', () => {
   gulp.watch(SRC + '/sass/**/*.scss',gulp.parallel('sass'));
+  gulp.watch(SRC + '/static/**/*.*',gulp.parallel('copy'));
   gulp.watch(SRC + '/js/**/*.js', gulp.parallel('webpack'));
   gulp.watch(SRC + '/sprite/*.png',gulp.parallel('sprite'));
   gulp.watch(SRC + '/sprite_sp/*.png',gulp.parallel('sprite_sp'));
@@ -215,6 +223,6 @@ gulp.task('watch', () => {
   gulp.watch(SRC + '/ect/**/*.ect',gulp.parallel('ect'));
 });
 
-gulp.task('all',gulp.series(gulp.parallel('webpack','sprite','sprite_sp','svgstore','imagemin','sass','ect')));
+gulp.task('all',gulp.series(gulp.parallel('webpack','sprite','sprite_sp','svgstore','imagemin','sass','ect', 'copy')));
 gulp.task("default",gulp.series(gulp.parallel("server", "watch")));
 
