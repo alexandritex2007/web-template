@@ -226,3 +226,4 @@ gulp.task('watch', () => {
 gulp.task('all',gulp.series(gulp.parallel('webpack','sprite','sprite_sp','svgstore','imagemin','sass','ect', 'copy')));
 gulp.task("default",gulp.series(gulp.parallel("server", "watch")));
 
+
