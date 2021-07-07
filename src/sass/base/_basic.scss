@@ -1,6 +1,6 @@
 /*=== basic ===*/
 :root {
-	font-size: $baseFontSize;
+	font-size: #{$baseFontSize}px;
 }
 
 * {
