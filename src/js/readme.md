@@ -47,17 +47,19 @@ headタグ内common.cssの上にswiper用のcssファイルを読み込む記述
 スライドを表示したい場所にhtmlを追加。
 
 ``` html
-<div class="swiper-container">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide"><img src="http://placehold.jp/250x150.png" alt=""></div>
-		<div class="swiper-slide"><img src="http://placehold.jp/250x150.png" alt=""></div>
-		<div class="swiper-slide"><img src="http://placehold.jp/250x150.png" alt=""></div>
+<div class="swiper">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img src="http://placehold.jp/250x150.png" alt=""></div>
+			<div class="swiper-slide"><img src="http://placehold.jp/250x150.png" alt=""></div>
+			<div class="swiper-slide"><img src="http://placehold.jp/250x150.png" alt=""></div>
+		</div>
+
+		<div class="swiper-pagination"></div>
+
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
 	</div>
-
-    <div class="swiper-pagination"></div>
-
-	<div class="swiper-button-prev"></div>
-	<div class="swiper-button-next"></div>
 </div>
 ```
 

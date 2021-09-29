@@ -6,6 +6,8 @@ Swiper.use([Pagination, Autoplay, EffectFade, Navigation]);
 export default function() {
     const mySwiper = new Swiper('.swiper-container', {
         loop: true,
+        slidesPerView: 2,
+        spaceBetween: 20,
         pagination: {
             el: '.swiper-pagination',
         },
@@ -16,11 +18,6 @@ export default function() {
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
-        },
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        speed: 3000
+        }
     });
 }
