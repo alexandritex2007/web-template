@@ -16,7 +16,7 @@
             margin-right: 0;
             margin-bottom: #{$mediaMarginBotomSp}px;
         }
-        &:nth-of-type(#{$mediaCol}) {
+        &:nth-of-type(#{$mediaCol}n) {
             margin-right: 0;
         }
         &:nth-last-of-type(-n+#{$mediaCol}) {
