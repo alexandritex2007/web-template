@@ -1,0 +1,61 @@
+/*=== @use ===*/
+@use "core/extend";
+@use "core/rule";
+@use "core/mixin";
+@use "core/sprite";
+@use "core/sprite_sp";
+@use "core/sprite_mixin";
+
+// title：コンテンツエリアモジュール
+// description：コンテンツの横幅や余白設定
+
+/*===　content　===*/
+.content {
+    // コンテンツ横幅
+    &_xl,
+    &_l,
+    &_m,
+    &_s,
+    &_xs {
+        width: 100%;
+        margin: 0 auto;
+        @include mixin.sp {
+            max-width: auto;
+            @include mixin.spPadding;
+            .content_xl,
+            .content_l,
+            .content_m,
+            .content_s,
+            .content_xs {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+    &_xl { max-width: #{rule.$contentXL}px; }
+    &_l { max-width: #{rule.$contentL}px; }
+    &_m { max-width: #{rule.$contentM}px; }
+    &_s { max-width: #{rule.$contentS}px; }
+    &_xs { max-width: #{rule.$contentXS}px; }
+    // セクション上下余白
+    &_block {
+        padding-top: rule.$blockPadding;
+        padding-bottom: rule.$blockPadding;
+        @include mixin.sp {
+            padding-top: rule.$spBlockPadding;
+            padding-bottom: rule.$spBlockPadding;
+        }
+        &_top {
+            padding-top: rule.$blockPadding;
+            @include mixin.sp {
+                padding-top: rule.$spBlockPadding;
+            }
+        }
+        &_bottom {
+            padding-bottom: rule.$blockPadding;
+            @include mixin.sp {
+                padding-bottom: rule.$spBlockPadding;
+            }
+        }
+    }
+}

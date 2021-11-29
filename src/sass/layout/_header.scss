@@ -1,8 +1,16 @@
+/*=== @use ===*/
+@use "core/extend";
+@use "core/rule";
+@use "core/mixin";
+@use "core/sprite";
+@use "core/sprite_sp";
+@use "core/sprite_mixin";
+
 /*=== l-header ===*/
 .l-header {
   &_logo {
     display: inline-block;
-    @include sprite($sprite-sprite01);
+    @include sprite_mixin.sprite(sprite.$sprite-sprite01);
   }
 
   /*---　gnav　---*/
@@ -12,7 +20,7 @@
 
   /*---　hamburgerMenu　---*/
   // $changeColor : $barColor;
-  $barColor : $siteColor;
+  $barColor : rule.$siteColor;
   $barwidth : 64px;
   $barHeight : 3px;
   $boxHeight : 40px;

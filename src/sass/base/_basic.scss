@@ -1,6 +1,10 @@
+@use "core/extend";
+@use "core/mixin";
+@use "core/rule";
+
 /*=== basic ===*/
 :root {
-	font-size: #{$baseFontSize}px;
+	font-size: #{rule.$baseFontSize}px;
 }
 
 * {
@@ -12,26 +16,26 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-size: rem(16);
-	font-family: $gothic;
-	color: $textColor;
+	font-size: mixin.rem(16);
+	font-family: rule.$gothic;
+	color: rule.$textColor;
 	-webkit-font-smoothing: antialiased;
-	@include sp {
-		font-size: rem(14);
+	@include mixin.sp {
+		font-size: mixin.rem(14);
 	}
 }
 
 a {
-	color: $linkColor;
+	color: rule.$linkColor;
 	@extend %lineHeight;
 	text-decoration: none;
 }
 
 p {
-	margin-bottom: $textBottom;
+	margin-bottom: rule.$textBottom;
 	@extend %lineHeight;
-	@include sp {
-		margin-bottom: $spTextBottom;
+	@include mixin.sp {
+		margin-bottom: rule.$spTextBottom;
 	}
 	&:last-child {
 		margin-bottom: 0;
@@ -40,48 +44,48 @@ p {
 
 h1 {
 	@extend %headingLineHeight;
-	font-size: rem(24);
-	@include sp {
-		font-size: rem(22);
+	font-size: mixin.rem(24);
+	@include mixin.sp {
+		font-size: mixin.rem(22);
 	}
 }
 
 h2 {
 	@extend %headingLineHeight;
-	font-size: rem(22);
+	font-size: mixin.rem(22);
 	margin-bottom: 10px;
-	@include sp {
-		font-size: rem(20);
+	@include mixin.sp {
+		font-size: mixin.rem(20);
 		margin-bottom: 10px;
 	}
 }
 
 h3 {
 	@extend %headingLineHeight;
-	font-size: rem(20);
+	font-size: mixin.rem(20);
 	margin-bottom: 10px;
-	@include sp {
-		font-size: rem(18);
+	@include mixin.sp {
+		font-size: mixin.rem(18);
 		margin-bottom: 10px;
 	}
 }
 
 h4 {
 	@extend %headingLineHeight;
-	font-size: rem(18);
+	font-size: mixin.rem(18);
 	margin-bottom: 10px;
-	@include sp {
-		font-size: rem(16);
+	@include mixin.sp {
+		font-size: mixin.rem(16);
 		margin-bottom: 10px;
 	}
 }
 
 h5 {
 	@extend %headingLineHeight;
-	font-size: rem(16);
+	font-size: mixin.rem(16);
 	margin-bottom: 10px;
-	@include sp {
-		font-size: rem(14);
+	@include mixin.sp {
+		font-size: mixin.rem(14);
 		margin-bottom: 10px;
 	}
 }
@@ -95,9 +99,9 @@ dl {
 }
 
 table, dl, ul, ol {
-	margin-bottom: $textBottom;
-	@include sp {
-		margin-bottom: $spTextBottom;
+	margin-bottom: rule.$textBottom;
+	@include mixin.sp {
+		margin-bottom: rule.$spTextBottom;
 	}
 }
 
@@ -116,14 +120,14 @@ body sub {
 }
 
 img {
-	@include sp {
+	@include mixin.sp {
 		max-width: 100%;
 		height: auto;
 	}
 }
 
 input {
-	@include sp {
+	@include mixin.sp {
 		font-size: 16px;
 	}
 }
@@ -177,7 +181,7 @@ input[type="radio"]{
 			display: block;
 			width: 11px;
 			height: 11px;
-			background: $siteColor;
+			background: rule.$siteColor;
 			border-radius: 50%;
 			position: absolute;
 			top: 3px;
@@ -211,8 +215,8 @@ input[type="checkbox"] {
 			width: 7px;
 			height: 14px;
 			transform: rotate(40deg);
-			border-bottom: 3px solid $siteColor;
-			border-right: 3px solid $siteColor;
+			border-bottom: 3px solid rule.$siteColor;
+			border-right: 3px solid rule.$siteColor;
 			position: absolute;
 			top: -5px;
 			left: 5px;

@@ -1,41 +1,49 @@
+/*=== @use ===*/
+@use "core/extend";
+@use "core/rule";
+@use "core/mixin";
+@use "core/sprite";
+@use "core/sprite_sp";
+@use "core/sprite_mixin";
+
 // title：ブロック用モジュール
 // description：リンクで飛ばさないブロック
 
 /*===　block　===*/
 .block {
 	&01 {
-		border: solid 1px $siteColor;
+		border: solid 1px rule.$siteColor;
 		padding: 20px;
-		@include sp {
+		@include mixin.sp {
 			padding: 16px;
 		}
 	}
 	&02 {
-		background-color: $lightGrayColor;
+		background-color: rule.$lightGrayColor;
 		padding: 20px;
-		@include sp {
+		@include mixin.sp {
 			padding: 16px;
 		}
 	}
 	&03 {
-		background-color: $darkGrayColor;
+		background-color: rule.$darkGrayColor;
 		color: #fff;
 		font-weight: 600;
 		padding: 20px;
-		@include sp {
+		@include mixin.sp {
 			padding: 16px;
 		}
 	}
 	&04 {
 		&_item {
 			display: flex;
-			@include sp {
+			@include mixin.sp {
 				flex-direction: column;
 			}
 		}
 		&_img {
 			width: 300px;
-			@include sp {
+			@include mixin.sp {
 				width: 100%;
 			}
 			img {
@@ -45,17 +53,17 @@
 		}
 		&_content {
 			padding-left: 20px;
-			@include sp {
+			@include mixin.sp {
 				padding-left: 0;
 				padding-top: 20px;
 			}
 		}
 		&_title {
 			font-weight: 600;
-			font-size: rem(20);
+			font-size: mixin.rem(20);
 			margin-bottom: 10px;
-			@include sp {
-				font-size: rem(18);
+			@include mixin.sp {
+				font-size: mixin.rem(18);
 			}
 		}
 		&_text {
@@ -63,7 +71,7 @@
 		}
 		&_reverse {
 			flex-direction: row-reverse;
-			@include sp {
+			@include mixin.sp {
 				flex-direction: column;
 			}
 			.block04 {
@@ -71,7 +79,7 @@
 					flex: 1;
 					padding-left: 0;
 					padding-right: 20px;
-					@include sp {
+					@include mixin.sp {
 						padding-right: 0;
 					}
 				}

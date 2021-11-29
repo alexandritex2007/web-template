@@ -1,3 +1,11 @@
+/*=== @use ===*/
+@use "core/extend";
+@use "core/rule";
+@use "core/mixin";
+@use "core/sprite";
+@use "core/sprite_sp";
+@use "core/sprite_mixin";
+
 // title：iframe系モジュール
 // description：iframeをレスポンシブ対応
 
@@ -5,15 +13,15 @@
 .embed {
 	// youtube
 	&_youtube {
-		margin-bottom: $textBottom;
-		@include sp {
+		margin-bottom: rule.$textBottom;
+		@include mixin.sp {
 			position: relative;
 			width: 100%;
 			padding-top: 56.25%;
 		}
 		iframe {
 			@extend %m0a;
-			@include sp {
+			@include mixin.sp {
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -29,7 +37,7 @@
 		padding-top: 30px;
 		height: 0;
 		overflow: hidden;
-		margin-bottom: $textBottom;
+		margin-bottom: rule.$textBottom;
 		iframe,
 		object,
 		embed {

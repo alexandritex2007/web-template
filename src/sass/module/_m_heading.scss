@@ -1,3 +1,11 @@
+/*=== @use ===*/
+@use "core/extend";
+@use "core/rule";
+@use "core/mixin";
+@use "core/sprite";
+@use "core/sprite_sp";
+@use "core/sprite_mixin";
+
 // title：見出しモジュール
 // description：hタグを装飾するためのモジュール
 
@@ -6,30 +14,30 @@
 	@at-root .single h2,
 	&02 {
 		@extend %headingLineHeight;
-		font-size: rem(22);
+		font-size: mixin.rem(22);
 		margin-bottom: 10px;
-		@include sp {
-			font-size: rem(20);
+		@include mixin.sp {
+			font-size: mixin.rem(20);
 			margin-bottom: 10px;
 		}
 	}
 	@at-root .single h3,
 	&03 {
 		@extend %headingLineHeight;
-		font-size: rem(20);
+		font-size: mixin.rem(20);
 		margin-bottom: 10px;
-		@include sp {
-			font-size: rem(18);
+		@include mixin.sp {
+			font-size: mixin.rem(18);
 			margin-bottom: 10px;
 		}
 	}
 	@at-root .single h4,
 	&04{
 		@extend %headingLineHeight;
-		font-size: rem(18);
+		font-size: mixin.rem(18);
 		margin-bottom: 10px;
-		@include sp {
-			font-size: rem(16);
+		@include mixin.sp {
+			font-size: mixin.rem(16);
 			margin-bottom: 10px;
 		}
 	}

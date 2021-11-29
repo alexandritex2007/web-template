@@ -1,3 +1,11 @@
+/*=== @use ===*/
+@use "core/extend";
+@use "core/rule";
+@use "core/mixin";
+@use "core/sprite";
+@use "core/sprite_sp";
+@use "core/sprite_mixin";
+
 // title：ボタン用モジュール
 // description：ボタンの装飾
 %icon_pos {
@@ -18,30 +26,30 @@
     padding-left: 24px;
     padding-right: 24px;
     text-align: center;
-	@include transition;
-	@include sp {
+	@include mixin.transition;
+	@include mixin.sp {
 		padding-top: 10px;
 		padding-bottom: 10px;
 		padding-left: 20px;
 		padding-right: 20px;
-		@include transition;
+		@include mixin.transition;
 	}
 	&_skin {
 		&01 {
-			color: $siteColor;
+			color: rule.$siteColor;
 			border: 1px solid;
 			&:hover {
-				background-color: $siteColor;
+				background-color: rule.$siteColor;
 				color: #FFF;
 			}
 		}
 		&02 {
-			background-color: $siteColor;
+			background-color: rule.$siteColor;
 			color: #FFF;
-			border: 1px solid $siteColor;
+			border: 1px solid rule.$siteColor;
 			&:hover {
 				background-color: #fff;
-				color: $siteColor;
+				color: rule.$siteColor;
 			}
 		}
 	}
@@ -51,8 +59,8 @@
 			&:before {
 				width: 6px;
 				height: 6px;
-				border-top: 1px solid $siteColor;
-				border-right: 1px solid $siteColor;
+				border-top: 1px solid rule.$siteColor;
+				border-right: 1px solid rule.$siteColor;
 				top: 50%;
 				right: 12px;
 				transform: translatey(-50%) rotate(45deg);
@@ -65,18 +73,18 @@
 		}
 	}
 	&_attention {
-		color: $attentionColor;
-		border: 1px solid $attentionColor;
+		color: rule.$attentionColor;
+		border: 1px solid rule.$attentionColor;
 		&:hover {
-			background-color: lighten($attentionColor,0%);
+			background-color: lighten(rule.$attentionColor,0%);
 			color: #FFF;
 		}
 	}
 	&_warning {
-		color: $warningColor;
-		border: 1px solid $warningColor;
+		color: rule.$warningColor;
+		border: 1px solid rule.$warningColor;
 		&:hover {
-			background-color: lighten($warningColor,0%);
+			background-color: lighten(rule.$warningColor,0%);
 			color: #FFF;
 		}
 	}
@@ -87,27 +95,27 @@
 		padding-left: 10px;
 		padding-right: 10px;
 		text-align: center;
-		@include transition;
-		@include sp {
+		@include mixin.transition;
+		@include mixin.sp {
 			padding-top: 5px;
 			padding-bottom: 5px;
 			padding-left: 10px;
 			padding-right: 10px;
-			@include transition;
+			@include mixin.transition;
 		}
 	}
 	&_big {
 		width: 100%;
 	}
 	&_radius {
-		@include radius;
+		@include mixin.radius;
 	}
 	&_wrapper {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		@include sp {
-			padding: $spTextBottom 0;
+		@include mixin.sp {
+			padding: rule.$spTextBottom 0;
 		}
 	}
 }

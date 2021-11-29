@@ -1,3 +1,11 @@
+/*=== @use ===*/
+@use "../core/extend";
+@use "../core/rule";
+@use "../core/mixin";
+@use "../core/sprite_mixin";
+@use "../core/sprite";
+@use "../core/sprite_sp";
+
 /*=== contents ===*/
 
 
@@ -15,7 +23,7 @@
 			&::before {
 				display: inline-block;
 				content: '';
-				@include sprite($sprite-sprite102);
+				@include sprite_mixin.sprite(sprite.$sprite-sprite102);
 			}
 		}
 	}
@@ -25,14 +33,14 @@
 .error-404{
 	padding: 120px 0;
 	text-align: center;
-	@include sp {
-		padding: 60px $spPadding;
+	@include mixin.sp {
+		padding: 60px rule.$spPadding;
 	}
 	&_heading{
 		margin-bottom: 40px;
-		font-size: rem(60);
-		@include sp {
-			font-size: rem(30);
+		font-size: mixin.rem(60);
+		@include mixin.sp {
+			font-size: mixin.rem(30);
 		}
 	}
 	&_text{
@@ -52,7 +60,7 @@
 		justify-content: center;
 		width: 45px;
 		height: 45px;
-		background-color: $siteColor;
+		background-color: rule.$siteColor;
 		&::before {
 			display: inline-block;
 			content: '';
@@ -71,14 +79,14 @@
 }
 
 .pconly {
-	@include sp {
+	@include mixin.sp {
 		display: none !important;
 	}
 }
 
 .sponly {
 	display: none !important;
-	@include sp {
+	@include mixin.sp {
 		display: block !important;
 	}
 }

@@ -1,6 +1,9 @@
+@use "sass:math";
+@use "../core/rule";
+
 // font-size(rem)
 @function rem($pixels) {
-    @return $pixels / $baseFontSize * 1rem;
+    @return math.div($pixels, rule.$baseFontSize) * 1rem;
 }
 
 // media
@@ -8,7 +11,7 @@
     display: flex;
     flex-wrap: wrap;
     &_item {
-        width: calc((100% / #{$mediaCol}) - #{$meidaMarginRight * (($mediaCol - 1) / $mediaCol)}px);
+        width: calc((100% / #{$mediaCol}) - #{$meidaMarginRight * (math.div($mediaCol - 1, $mediaCol))}px);
         margin-right: #{$meidaMarginRight}px;
         margin-bottom: #{$mediaMarginBotom}px;
         @include sp {
@@ -35,7 +38,7 @@
 
 
 // transition
-@mixin transition($transition: $speed ease) {
+@mixin transition($transition: rule.$speed ease) {
     transition: $transition;
 }
 
@@ -59,7 +62,7 @@
 }
 
 // padding
-@mixin spPadding($left: $spPadding, $right: $spPadding) {
+@mixin spPadding($left: rule.$spPadding, $right: rule.$spPadding) {
     padding-left: $left;
     padding-right: $right;
 }
@@ -100,9 +103,9 @@
 
     @if $direction == left{
         $set: right;
-    }@elseif $direction == top{
+    }@else if $direction == top{
         $set: bottom;
-    }@elseif $direction == bottom{
+    }@else if $direction == bottom{
         $set: top;
     }@else{
         $set: left;
@@ -117,23 +120,23 @@
 
 
 // radius
-@mixin radius($radius: $radius) {
+@mixin radius($radius: rule.$radius) {
     border-radius: $radius;
 }
 
 // media querys
 @mixin sp {
-    @media screen and (max-width: $sp) {
+    @media screen and (max-width: rule.$sp) {
         @content;
     }
 }
 @mixin tablet {
-    @media screen and (min-width:$sp + 1) and ( max-width:$tablet) {
+    @media screen and (min-width: rule.$sp + 1) and ( max-width:$tablet) {
         @content;
     }
 }
 @mixin pc {
-    @media screen and (min-width:$sp + 1) {
+    @media screen and (min-width: rule.$sp + 1) {
         @content;
     }
 }

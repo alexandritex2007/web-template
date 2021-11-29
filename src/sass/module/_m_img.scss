@@ -1,3 +1,11 @@
+/*=== @use ===*/
+@use "core/extend";
+@use "core/rule";
+@use "core/mixin";
+@use "core/sprite";
+@use "core/sprite_sp";
+@use "core/sprite_mixin";
+
 // title：画像関連用モジュール
 // description：画像配置やキャプション
 
@@ -12,22 +20,22 @@
 		float: left;
 		margin-right: 30px;
 		margin-bottom: 20px;
-		@include sp {
+		@include mixin.sp {
 			display: flex;
 			justify-content: center;
 			float: none;
-			margin: 0 0 $spTextBottom;
+			margin: 0 0 rule.$spTextBottom;
 		}
 	}
 	&right {
 		float: right;
 		margin-left: 30px;
 		margin-bottom: 20px;
-		@include sp {
+		@include mixin.sp {
 			display: flex;
 			justify-content: center;
 			float: none;
-			margin: 0 0 $spTextBottom;
+			margin: 0 0 rule.$spTextBottom;
 		}
 	}
 }

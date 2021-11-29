@@ -1,6 +1,7 @@
 const gulp = require('gulp'),
   ect = require('gulp-ect'),
   sass = require('gulp-sass'),
+  fiber = require('fibers'),
   notify = require('gulp-notify'),
   babel = require('gulp-babel'),
   webpackStream = require('webpack-stream'),
@@ -49,6 +50,7 @@ gulp.task('ect', (done) => {
 });
 
 // Sass
+sass.compiler = require("sass"); // Dart Sass = "sass"
 gulp.task('sass', (done) => {
   gulp.src(SRC + '/sass/**/*.scss')
     .pipe(frontnote({
@@ -61,7 +63,10 @@ gulp.task('sass', (done) => {
     }))
     .pipe(sourcemaps.init())
     .pipe(bulkSass())
-    .pipe(sass({outputStyle: 'compressed'})) //nested,compact,expanded,compressed
+    .pipe(sass({
+      fiber: fiber,
+      outputStyle: 'compressed'
+    })) //nested,compact,expanded,compressed
     .pipe(autoprefixer({
       cascade: false
     }))

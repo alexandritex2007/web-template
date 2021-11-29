@@ -1,3 +1,11 @@
+/*=== @use ===*/
+@use "core/extend";
+@use "core/rule";
+@use "core/mixin";
+@use "core/sprite";
+@use "core/sprite_sp";
+@use "core/sprite_mixin";
+
 // title：表モジュール
 // description：表の装飾（ボーダー、レスポンシブ）用モジュール
 
@@ -12,7 +20,7 @@
 	td {
 		padding: 8px 10px;
 		vertical-align: top;
-		@include sp {
+		@include mixin.sp {
 			padding: 8px 10px;
 		}
 	}
@@ -23,8 +31,8 @@
 	}
 	&_skin01 {
 		th {
-			background-color: $accentColor;
-			color: $siteColor;
+			background-color: rule.$accentColor;
+			color: rule.$siteColor;
 		}
 	}
 	&_border {
@@ -34,9 +42,9 @@
 		}
 	}
 	&_center {
-		margin: 0 auto $textBottom auto;
-		@include sp {
-			margin: 0 auto $spTextBottom auto;
+		margin: 0 auto rule.$textBottom auto;
+		@include mixin.sp {
+			margin: 0 auto rule.$spTextBottom auto;
 		}
 		th {
 			text-align: center;

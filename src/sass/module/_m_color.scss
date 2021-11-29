@@ -1,0 +1,39 @@
+/*=== @use ===*/
+@use "core/extend";
+@use "core/rule";
+@use "core/mixin";
+@use "core/sprite";
+@use "core/sprite_sp";
+@use "core/sprite_mixin";// title：カラー用モジュール
+
+// description：テキストのカラーや背景カラーなど
+
+/*===　color　===*/
+.color {
+    &_site {
+        color: rule.$siteColor;
+    }
+    &_accent {
+        color: rule.$accentColor;
+    }
+    &_text {
+        color: rule.$textColor;
+    }
+    &_attention {
+        color: rule.$attentionColor;
+    }
+    &_white {
+        color: white;
+    }
+    &_bg {
+        &_site {
+            background-color: rule.$siteColor;
+        }
+        &_accent {
+            background-color: rule.$accentColor;
+        }
+        &_gray {
+            background-color: #eee;
+        }
+    }
+}

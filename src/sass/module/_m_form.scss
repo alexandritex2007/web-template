@@ -1,11 +1,19 @@
+/*=== @use ===*/
+@use "core/extend";
+@use "core/rule";
+@use "core/mixin";
+@use "core/sprite";
+@use "core/sprite_sp";
+@use "core/sprite_mixin";
+
 // title：フォーム用モジュール
 // description：バリデーションチェックなど
 
 /*===　form　===*/
 .form {
     &_attention {
-        color: $attentionColor;
-        font-size: rem(14);
+        color: rule.$attentionColor;
+        font-size: mixin.rem(14);
         margin-left: 4px;
     }
     // フォームレイアウト
@@ -13,13 +21,13 @@
         th,
         td {
             padding: 10px;
-            @include sp {
+            @include mixin.sp {
                 display: block;
                 width: 100%;
             }
         }
         th {
-            @include sp {
+            @include mixin.sp {
                 padding-bottom: 0;
                 text-align: left;
             }
