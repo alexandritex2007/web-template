@@ -11,6 +11,7 @@ const gulp = require('gulp'),
   bulkSass = require('gulp-sass-bulk-import'),
   rename = require('gulp-rename'),
   frontnote = require('gulp-frontnote'),
+  webp = require('gulp-webp'),
   imagemin = require('gulp-imagemin'),
   mozjpeg = require('imagemin-mozjpeg'),
   pngquant = require('imagemin-pngquant'),
@@ -151,6 +152,12 @@ gulp.task('sprite_sp', (done) => {
   done();
 });
 
+gulp.task('webp', (done) => {
+  gulp.src(SRC + '/webp/**/*.{png,jpg,jpeg}')
+  .pipe(webp())
+  .pipe(gulp.dest(DIST + '/content/webp/'))
+})
+
 // Img Convert
 gulp.task('imagemin', (done) => {
   gulp.src(SRC + '/img/assets/**/*.{png,jpg,jpeg}')
@@ -224,11 +231,12 @@ gulp.task('watch', () => {
   gulp.watch(SRC + '/sprite/*.png',gulp.parallel('sprite'));
   gulp.watch(SRC + '/sprite_sp/*.png',gulp.parallel('sprite_sp'));
   gulp.watch(SRC + '/svg/*.svg',gulp.parallel('svgstore'));
+  gulp.watch(SRC + '/webp/**/*.{png,jpg,jpeg}',gulp.parallel('webp'));
   gulp.watch(SRC + '/img/**/*.{png,jpg,jpeg}',gulp.parallel('imagemin'));
   gulp.watch(SRC + '/ect/**/*.ect',gulp.parallel('ect'));
 });
 
-gulp.task('all',gulp.series(gulp.parallel('webpack','sprite','sprite_sp','svgstore','imagemin','sass','ect', 'copy')));
+gulp.task('all',gulp.series(gulp.parallel('webpack','sprite','sprite_sp','svgstore','imagemin','webp','sass','ect', 'copy')));
 gulp.task("default",gulp.series(gulp.parallel("server", "watch")));
 
 
