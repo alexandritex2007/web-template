@@ -1,14 +1,12 @@
 const gulp = require('gulp'),
   ect = require('gulp-ect'),
-  sass = require('gulp-sass'),
-  fiber = require('fibers'),
+  sass = require('gulp-dart-sass'),
   notify = require('gulp-notify'),
   babel = require('gulp-babel'),
   webpackStream = require('webpack-stream'),
   webpack = require('webpack'),
   sourcemaps = require('gulp-sourcemaps'),
   autoprefixer = require('gulp-autoprefixer'),
-  bulkSass = require('gulp-sass-bulk-import'),
   rename = require('gulp-rename'),
   frontnote = require('gulp-frontnote'),
   imagemin = require('gulp-imagemin'),
@@ -62,9 +60,7 @@ gulp.task('sass', (done) => {
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
     .pipe(sourcemaps.init())
-    .pipe(bulkSass())
-    .pipe(sass({
-      fiber: fiber,
+    .pipe(sass.sync({
       outputStyle: 'compressed'
     })) //nested,compact,expanded,compressed
     .pipe(autoprefixer({
